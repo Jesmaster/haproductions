@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function haproductions_config_menu() {
+  $items['admin/haproductions'] = array(
+    'title' => 'HA Productions Settings',
+    'page callback' => 'haproductions_config_admin_settings_callback',
+    'access arguments' => array('haproductions settings'),
+    'file' => 'admin.haproductions_config.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function haproductions_config_permission() {
+  return array(
+    'haproductions settings' =>  array(
+      'title' => t('HA Productions Settings'),
+      'description' => t('Gain access to to HA Productions site settings.'),
+    ),
+  );
+}

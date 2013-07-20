@@ -1,0 +1,13 @@
+/**
+ * Colors
+ */
+/* line 3, ../sass/general.scss */
+body {
+  background-color: #000f1e;
+  color: #333333;
+}
+
+/* line 8, ../sass/general.scss */
+#page {
+  background-color: white;
+}

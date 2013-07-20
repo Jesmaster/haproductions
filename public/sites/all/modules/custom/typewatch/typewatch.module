@@ -1,0 +1,22 @@
+<?php
+
+function typewatch_libraries_info(){
+	$libraries['typewatch'] = array(
+		'name' => 'Typewatch',
+		'vendor url' => 'https://github.com/dennyferra/TypeWatch',
+		'download url' => 'https://raw.github.com/dennyferra/TypeWatch/master/jquery.typewatch.js',
+	    'version arguments' => array(
+	      'file' => 'jquery.typewatch.js',
+	      'pattern' => '@TypeWatch\s+([0-9a-zA-Z\.-]+)@',
+	      'lines' => 5,
+	      'cols' => 20,
+	    ),
+	    'files' => array(
+	    	'js' => array(
+	    		'jquery.typewatch.js',
+	    	),
+	    ),
+	);
+
+	return $libraries;
+}

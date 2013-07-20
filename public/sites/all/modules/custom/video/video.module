@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function video_menu() {
+  $items['admin/haproductions/video-settings'] = array(
+    'title' => 'Video Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('video_settings_form'),
+    'access arguments' => array('haproductions settings'),
+    'file' => 'video.admin.inc',
+  );
+
+  return $items;
+}

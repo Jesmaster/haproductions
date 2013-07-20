@@ -1,0 +1,5 @@
+name = HA Productions
+description = HA Productions general settings
+package = HA Productions
+version = "7.x-1.1"
+core = "7.x"

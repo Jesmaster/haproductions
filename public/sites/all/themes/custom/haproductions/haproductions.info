@@ -65,6 +65,7 @@ stylesheets[all][] = css/zen/print.css
 
 ; HA Productions stylesheets
 stylesheets[all][] = css/ckeditor.css
+stylesheets[all][] = css/general.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function video_search_menu() {
+  $items['video-quick-search'] = array(
+    'title' => t('Video Quick Search'),
+    'page callback' => 'video_search_page_callback',
+    'access arguments' => array('access content'),
+    'file' => 'video_search.pages.inc',
+  );
+
+  return $items;
+}
