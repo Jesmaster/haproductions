@@ -1,0 +1,633 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"articl",
+				"article_type"
+			],
+			[
+				"arti",
+				"article_type"
+			],
+			[
+				"hook_block",
+				"hook_block_view	hook_block_view"
+			],
+			[
+				"head",
+				"header_height"
+			],
+			[
+				"l",
+				"list-style-type"
+			],
+			[
+				"main",
+				"main-menu-second-link-color"
+			],
+			[
+				"Al",
+				"AlternateImageUrl3"
+			],
+			[
+				"Product",
+				"ProductListingDetails"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"cat_c",
+				"cat_count-1"
+			],
+			[
+				"cate",
+				"category_id"
+			],
+			[
+				"catc",
+				"cat_count-1"
+			],
+			[
+				"field-name-field",
+				"field-name-field-tags"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"functio",
+				"function_exists"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"caro",
+				"carousel_width"
+			],
+			[
+				"ca",
+				"carousel_width"
+			],
+			[
+				"html",
+				"htmlspecialchars_decode"
+			],
+			[
+				"or",
+				"orderBy"
+			],
+			[
+				"re",
+				"ready	document ready - jQuery"
+			],
+			[
+				"exp",
+				"experienceID"
+			],
+			[
+				"field-name",
+				"field-name-field-left-body"
+			],
+			[
+				"hei",
+				"height_diff"
+			],
+			[
+				"EMP",
+				"EMPLOYER_FAQ_PAGE"
+			],
+			[
+				"EMPLOYEE",
+				"EMPLOYEE_FAQ_PAGE"
+			],
+			[
+				"field_dis",
+				"field_display_date_value"
+			],
+			[
+				"SP",
+				"SPONSOR_SILVER"
+			],
+			[
+				"sp",
+				"sponsor_level"
+			],
+			[
+				"SPO",
+				"SPONSOR_SILVER"
+			],
+			[
+				"spon",
+				"sponsor_view"
+			],
+			[
+				"SPON",
+				"SPONSOR_SILVER"
+			],
+			[
+				"spo",
+				"sponsor_view"
+			],
+			[
+				"prev",
+				"preventDefault"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"fet",
+				"Fetch: File"
+			],
+			[
+				"fetch",
+				"Fetch: File"
+			],
+			[
+				"synph",
+				"Set Syntax: PHP"
+			],
+			[
+				"syp",
+				"Set Syntax: PHP"
+			],
+			[
+				"syph",
+				"Set Syntax: PHP"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pro",
+				"Project: Add Folder"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"packi",
+				"Package Control: Install Package"
+			],
+			[
+				"snipp",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"paci",
+				"Package Control: Install Package"
+			],
+			[
+				"packis",
+				"Package Control: Install Package"
+			],
+			[
+				"pacin",
+				"Package Control: Install Package"
+			],
+			[
+				"paconi",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/C/xampp/apache/conf/extra/httpd-xampp.conf",
+		"/C/Users/Jes/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Program Files (x86)/Steam/steamapps/common/Dark Souls Prepare to Die Edition/DATA/DSfix.ini",
+		"/C/xampp/htdocs/yogatuneup/public/sites/all/themes/custom/yogatuneup/sass/pages.scss",
+		"/C/xampp/htdocs/yogatuneup/public/sites/all/modules/custom/checkout/checkout.module",
+		"/C/xampp/htdocs/yogatuneup/public/sites/all/themes/custom/yogatuneup/sass/forms.scss",
+		"/C/xampp/htdocs/yogatuneup/public/sites/all/modules/contrib/ubercart/payment/uc_credit/uc_credit.module",
+		"/C/xampp/htdocs/yogatuneup/public/sites/all/modules/contrib/ubercart/uc_cart/uc_cart.pages.inc",
+		"/C/xampp/htdocs/yogatuneup/public/sites/all/modules/contrib/ubercart/uc_cart/uc_cart.module",
+		"/C/xampp/htdocs/yogatuneup/public/sites/all/modules/contrib/ubercart/shipping/uc_usps/uc_usps.module",
+		"/C/xampp/htdocs/yogatuneup/public/sites/all/modules/contrib/ubercart/shipping/uc_usps/1926054.patch.txt",
+		"/C/xampp/php/php.ini",
+		"/C/xampp/htdocs/yogatuneup/public/sites/default/settings.database.php",
+		"/C/xampp/htdocs/matterinc/public/sites/default/settings.database.php",
+		"/G/downloads/complete/Formic Wars - Burning Earth, and Shadows in Flight [prefer/Orson Scott Card - [Ender 11 - Shadow 05] - Shadows in Flight (enhanced edition) (mobi).mobi",
+		"/G/downloads/incomplete/Eureka Complete Season 1-2 720p.WEB-DL.AC3.x264.NLSubs-WishM/Eureka_Complete_Season_1-2_720p.WEB-DL.AC3.x264.NLSubs-WishM.nfo",
+		"/F/TV Shows/Dr Who/Season 07/Doctor Who (2005) - 7x13 - The Name of the Doctor.nfo",
+		"/G/downloads/complete/Andrew Lloyd Webber Musicals Sing And Dance PAL Wii-WiiERD/w-alwmsd.nfo",
+		"/C/Users/Jes/Downloads/Andrew_Lloyd_Webber_Musicals_Sing_And_Dance_PAL_Wii-WiiERD.nfo",
+		"/G/downloads/incomplete/Game.of.Thrones.S03E08.720P.HDTV.x264-EVOLVE/game.of.thrones.s03e08.720p.hdtv.x264-evolve.nfo",
+		"/C/Program Files (x86)/Steam/steamapps/common/Dark Souls Prepare to Die Edition/DATA/DSfixKeys.ini",
+		"/G/BioShock_Infinite-FLT/fairlight.nfo",
+		"/F/Anime/Anime TV Shows/Attack on Titan/[Commie]_Attack_on_Titan_-_01_[C1A7B58D].nfo",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/js/script.js",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/katskill.info",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/normalize.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/navigation.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/layouts/responsive-sidebars.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/pages.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/_katskill.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/templates/node--article.tpl.php",
+		"/C/xampp/htdocs/katskill/sites/all/modules/custom/article/article.module",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/js/jquery.history.js",
+		"/C/xampp/htdocs/katskill/includes/common.inc",
+		"/C/xampp/htdocs/katskill/.htaccess",
+		"/C/xampp/htdocs/katskill/.gitignore",
+		"/C/Users/Jes/Downloads/katskill.sql",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/nodes.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/blocks.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/template.php",
+		"/C/Users/Jes/Downloads/view.thtml",
+		"/C/Users/Jes/Downloads/list_all.thtml",
+		"/C/xampp/htdocs/katskill/sites/all/modules/contrib/ckeditor/ckeditor/ckeditor/config.js",
+		"/C/xampp/htdocs/katskill/sites/all/modules/contrib/ckeditor/ckeditor.info",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/fields.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/templates/page.tpl.php",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/sass/_base.scss",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/templates/node.tpl.php",
+		"/Z/jimmyjazz/jesse/redesign/public/sites/all/modules/jimmyjazz/ebay/classes/GeneratePaypalXML.class.inc",
+		"/Z/jimmyjazz/jesse/redesign/public/sites/all/modules/jimmyjazz/ebay/ebay.module",
+		"/Z/jimmyjazz/jesse/redesign/public/sites/all/modules/jimmyjazz/ebay/classes/EbatNs/ItemType.php",
+		"/Z/jimmyjazz/jesse/redesign/public/sites/all/modules/jimmyjazz/ebay/classes/EbatNs/PrimaryCategoryType.php",
+		"/Z/jimmyjazz/jesse/redesign/public/sites/all/modules/jimmyjazz/ebay/classes/EbatNs/CategoryType.php",
+		"/Z/jimmyjazz/jesse/redesign/public/sites/all/modules/jimmyjazz/ebay/classes/EbatNs/AddFixedPriceItemRequestType.php",
+		"/Z/jimmyjazz/jesse/redesign/public/sites/all/modules/jimmyjazz/ebay/classes/EbatNs/ItemSpecificsEnabledDefinitionType.php",
+		"/C/xampp/htdocs/katskill/sites/all/modules/custom/article_tag/article.info",
+		"/C/xampp/htdocs/katskill/sites/all/modules/custom/article_tag/article.module",
+		"/C/xampp/htdocs/katskill/sites/all/modules/custom/article_tag/article_tag.module",
+		"/C/xampp/htdocs/katskill/sites/all/modules/custom/article_tag/article_tag.info",
+		"/C/xampp/htdocs/katskill/sites/all/themes/custom/katskill/css/navigation.css",
+		"/F/Anime/Anime TV Shows/[a4e]Azumanga_Daioh_01-26/jes",
+		"/C/xampp/htdocs/katskill/sites/default/settings.php",
+		"/Z/goodwill/jesse/sites/all/modules/custom/financial_gift/financial_gift.module",
+		"/Z/goodwill/jesse/sites/all/modules/custom/financial_gift/inc/payflow_curl.module",
+		"/F/TV Shows/Dr Who/Season 00/Doctor Who (2005) - 0x66 - The Snowmen.nfo",
+		"/F/TV Shows/Homeland/Homeland - 1x01 - Pilot.nfo",
+		"/F/TV Shows/Star Trek DS9/Star Trek Deep Space Nine - 1x03 - Past Prologue.nfo",
+		"/F/TV Shows/Curiosity/tvshow.nfo",
+		"/F/TV Shows/Game of Thrones/tvshow.nfo",
+		"/F/TV Shows/Game of Thrones/season01.tbn",
+		"/F/TV Shows/Star Trek Deep Space Nine/Season 04/Star Trek Deep Space Nine - 4x01x02 - The Way of the Warrior & The Way of the Warrior (2).nfo",
+		"/F/TV Shows/Star Trek Deep Space Nine/Season 01/Star Trek Deep Space Nine - 1x01x02 - Emissary & Emissary (2).nfo",
+		"/F/TV Shows/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - 7x01 - Image in the Sand.nfo",
+		"/F/TV Shows/Star Trek Deep Space Nine/Star Trek Deep Space Nine - 1x10 - Move Along Home.nfo",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/templates/field--body--work.tpl.php",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/templates/node--work.tpl.php",
+		"/C/xampp/htdocs/matterinc/public/sites/all/modules/custom/homepage/homepage.module",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/anythingslider.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/modules/custom/homepage/work.js",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/fields.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/template.php",
+		"/C/xampp/htdocs/matterinc/public/sites/all/modules/custom/homepage/homepage.js",
+		"/C/xampp/htdocs/matterinc/public/sites/all/modules/custom/about/about.js",
+		"/C/xampp/htdocs/matterinc/public/sites/all/modules/custom/about/about.module",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/templates/node--about.tpl.php",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/pages.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/js/matterinc.js",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/navigation.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/matterinc.info",
+		"/C/xampp/htdocs/partnershealth/homepage/public/Assets/js/hp-js.js",
+		"/C/xampp/htdocs/partnershealth/homepage/public/Assets/css/anythingslider.css",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/modules/custom/faq/faq.module",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/modules/custom/compliance/compliance.module",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/default/settings.database.php",
+		"/C/Users/Jes/AppData/Roaming/Sublime Text 2/Packages/User/Fetch.sublime-settings",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/anythingslider.css",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/css/fields.css",
+		"/C/xampp/htdocs/partnershealth/homepage/public/Assets/css/homepage.css",
+		"/C/xampp/htdocs/partnershealth/homepage/public/index.html",
+		"/C/xampp/htdocs/partnershealth/homepage/public/Assets/css/global.css",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/normalize.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/layouts/fixed-width.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/_base.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/blocks.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/js/ckeditor.styles.js",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/ckeditor.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/sass/_matterinc.scss",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/templates/html.tpl.php",
+		"/C/xampp/htdocs/matterinc/public/sites/all/modules/contrib/ckeditor/ckeditor/README.md",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/custom/matterinc/templates/page.tpl.php",
+		"/C/xampp/htdocs/matterinc/public/sites/all/themes/contrib/zen/templates/html.tpl.php",
+		"/C/xampp/htdocs/partnershealth2/homepage/public/Assets/js/hp-js.js",
+		"/C/xampp/htdocs/partnershealth2/homepage/public/Assets/css/homepage.css",
+		"/C/xampp/htdocs/partnershealth2/homepage/public/index.html",
+		"/C/Users/Jes/AppData/Roaming/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/F/Books/Unknown/grays anatomy for students (6001)/grays anatomy for students - Unknown.htmlz",
+		"/G/downloads/complete/Grays_Anatomy_for_Students_-_R._Drake_et_al._Elsevier_2007/Gray's Anatomy for Students - R. Drake, et al., (Elsevier, 2007) WW.chm",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/themes/custom/apa_visa/sass/pages.scss",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/themes/custom/apa_visa/js/main.js",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/themes/custom/apa_visa/sass/blocks.scss",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/themes/custom/apa_visa/sass/fields.scss",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/themes/custom/apa_visa/sass/navigation.scss",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/themes/custom/apa_visa/sass/layouts/fixed-width.scss",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/modules/custom/compliance/compliance.js",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/modules/custom/homepage/js/homepage.js",
+		"/C/xampp/htdocs/apa-paycard-portal/public/sites/all/modules/custom/homepage/homepage.module"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\xampp\\htdocs\\yogatuneup\\public\\sites\\all\\themes\\custom\\yogatuneup\\sass",
+			"C:\\xampp\\htdocs\\yogatuneup\\public\\sites\\all\\modules\\contrib\\ubercart",
+			"<project>",
+			"C:\\xampp\\htdocs\\homepage\\public",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"yogatuneup",
+			"enableT",
+			".messages",
+			"padding",
+			"continue",
+			"cancel",
+			"-",
+			"To protect our customers from identity theft, ",
+			"apply",
+			"max_exe",
+			"mem",
+			"katskill",
+			"data",
+			"medicine",
+			"food",
+			"second",
+			"MainImageUrl",
+			"PrimaryCa",
+			"PrimaryCat",
+			"result",
+			"second",
+			"RewriteBase",
+			"medicine",
+			";\n",
+			"cp",
+			"apavisa",
+			"apa-paycard-portal",
+			"apavisa",
+			"skoolsuk",
+			"password",
+			"username",
+			"databasename",
+			"important",
+			";\n",
+			"});\n",
+			"php",
+			"partners",
+			"partnershealth/homepage",
+			"important",
+			"#video-slide",
+			"video-slide",
+			"partnersinc",
+			"matter",
+			"short_open",
+			"ssl",
+			"field",
+			"Employee",
+			"compliance",
+			"Homepage",
+			"color",
+			"Platinum",
+			"platinum",
+			"Platinum",
+			"platinum",
+			"prev2",
+			"size",
+			".scrollable",
+			"#scroll",
+			"getTracker",
+			"images"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sett.da",
+				"public/sites/default/settings.database.php"
+			],
+			[
+				"navi",
+				"sites/all/themes/custom/katskill/sass/navigation.scss"
+			],
+			[
+				"comm",
+				"includes/common.inc"
+			],
+			[
+				"fields.sc",
+				"sites/all/themes/custom/katskill/sass/fields.scss"
+			],
+			[
+				"itemty",
+				"classes/EbatNs/ItemType.php"
+			],
+			[
+				"primar",
+				"classes/EbatNs/PrimaryCategoryType.php"
+			],
+			[
+				"home",
+				"public/Assets/css/homepage.css"
+			],
+			[
+				"glob",
+				"public/Assets/css/global.css"
+			],
+			[
+				"homepa",
+				"public/Assets/css/homepage.css"
+			],
+			[
+				"pages.",
+				"public/sites/all/themes/custom/apa_visa/sass/pages.scss"
+			],
+			[
+				"pages.sc",
+				"public/sites/all/themes/custom/apa_visa/sass/pages.scss"
+			],
+			[
+				"blocks",
+				"public/sites/all/themes/custom/apa_visa/sass/blocks.scss"
+			],
+			[
+				"nodes",
+				"public/sites/all/themes/custom/apa_visa/sass/nodes.scss"
+			],
+			[
+				"blocksc",
+				"public/sites/all/themes/custom/apa_visa/sass/blocks.scss"
+			],
+			[
+				"fixed",
+				"apa-paycard-portal/public/sites/all/themes/custom/apa_visa/sass/layouts/fixed-width.scss"
+			],
+			[
+				"glo",
+				"homepage/public/Assets/css/global.css"
+			],
+			[
+				"hp-j",
+				"homepage/public/Assets/js/hp-js.js"
+			],
+			[
+				"fixed-w",
+				"public/sites/all/themes/custom/apa_visa/sass/layouts/fixed-width.scss"
+			],
+			[
+				"cussc",
+				"public/sites/all/themes/custom/apa_visa/sass/_custom.scss"
+			],
+			[
+				"base.scss",
+				"public/sites/all/themes/custom/apa_visa/sass/_base.scss"
+			],
+			[
+				"conrb",
+				"public/sites/all/themes/custom/apa_visa/config.rb"
+			],
+			[
+				"test.j",
+				"sites/all/modules/custom/test/test.js"
+			],
+			[
+				"tesmo",
+				"sites/all/modules/custom/test/test.module"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 436.0,
+	"status_bar_visible": true
+}
