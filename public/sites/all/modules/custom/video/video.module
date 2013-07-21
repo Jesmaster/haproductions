@@ -1,5 +1,7 @@
 <?php
 
+define('VIDEO_DOWNLOAD_URL','http://'.variable_get('cloudfront_domain',''));
+
 /**
  * Implements hook_menu().
  */
@@ -13,4 +15,15 @@ function video_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function video_node_view($node, $view_mode, $langcode) {
+	if($view_mode == 'full'){
+		if(field_get_items('node', $node, 'field_youtube_id')){
+			unset($node->content['field_images']);
+		}
+	}
 }

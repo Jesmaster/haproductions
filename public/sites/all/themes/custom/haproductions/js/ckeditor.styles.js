@@ -26,9 +26,10 @@ if(typeof(CKEDITOR) !== 'undefined') {
             { name : 'Preformatted Text', element : 'pre' },
             { name : 'Address'			, element : 'address' },
             */
-
+            /*
             { name : 'Blue Title'		, element : 'h3', styles : { 'color' : 'Blue' } },
             { name : 'Red Title'		, element : 'h3', styles : { 'color' : 'Red' } },
+            */
 
             /* Inline Styles */
 
@@ -42,7 +43,7 @@ if(typeof(CKEDITOR) !== 'undefined') {
             { name : 'Subscript'		, element : 'sub' },
             { name : 'Superscript'		, element : 'sup' },
             */
-
+            /*
             { name : 'Marker: Yellow'	, element : 'span', styles : { 'background-color' : 'Yellow' } },
             { name : 'Marker: Green'	, element : 'span', styles : { 'background-color' : 'Lime' } },
 
@@ -63,9 +64,10 @@ if(typeof(CKEDITOR) !== 'undefined') {
 
             { name : 'Language: RTL'	, element : 'span', attributes : { 'dir' : 'rtl' } },
             { name : 'Language: LTR'	, element : 'span', attributes : { 'dir' : 'ltr' } },
+            */
 
             /* Object Styles */
-
+            /*
             {
                     name : 'Image on Left',
                     element : 'img',
@@ -87,5 +89,6 @@ if(typeof(CKEDITOR) !== 'undefined') {
                             'align' : 'right'
                     }
             }
+            */
     ]);
 }
