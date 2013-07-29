@@ -13,3 +13,92 @@ function video_search_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_search_info().
+ */
+function video_search_search_info() {
+  return array(
+    'title' => 'Video',
+  );
+}
+
+/**
+ * Implements hook_update_index().
+ */
+function video_search_update_index() {
+  $limit = (int) variable_get('search_cron_limit', 100);
+
+  $result = db_query_range("SELECT n.nid FROM {node} n LEFT JOIN {search_dataset} d ON d.type = 'video_search' AND n.type='video' AND d.sid = n.nid WHERE d.sid IS NULL OR d.reindex <> 0 ORDER BY d.reindex ASC, n.nid ASC", 0, $limit);
+
+  foreach ($result as $node) {
+    $node = node_load($node->nid);
+
+    // Save the changed time of the most recent indexed node, for the search
+    // results half-life calculation.
+    variable_set('node_cron_last', $node->changed);
+
+    // Render the node.
+    node_build_content($node, 'search_index');
+    $node->rendered = drupal_render($node->content);
+
+    $text = '<h1>' . check_plain($node->title) . '</h1>' . $node->rendered;
+
+    // Fetch extra data normally not visible
+    $extra = module_invoke_all('node_update_index', $node);
+    foreach ($extra as $t) {
+      $text .= $t;
+    }
+
+    // Update index
+    search_index($node->nid, 'video_search', $text);
+  }
+}
+
+/**
+ * Implements hook_search_execute().
+ */
+function video_search_search_execute($keys = NULL, $conditions = NULL) {
+  // Build matching conditions
+  $query = db_select('search_index', 'i', array('target' => 'slave'))->extend('SearchQuery')->extend('PagerDefault');
+  $query->join('node', 'n', 'n.nid = i.sid');
+  $query->condition('n.status', 1)->condition('n.type','video')->addTag('node_access')->searchExpression($keys, 'video_search');
+
+  // Insert special keywords.
+  $query->setOption('type', 'n.type');
+  $query->setOption('language', 'n.language');
+  if ($query->setOption('term', 'ti.tid')) {
+    $query->join('taxonomy_index', 'ti', 'n.nid = ti.nid');
+  }
+  // Only continue if the first pass query matches.
+  if (!$query->executeFirstPass()) {
+    return array();
+  }
+
+  // Add the ranking expressions.
+  _node_rankings($query);
+
+  // Load results.
+  $find = $query->execute();
+  $results = array();
+  foreach ($find as $item) {
+    // Render the node.
+    $node = node_load($item->sid);
+    $results[] = $node;
+  }
+  return $results;
+}
+
+function video_search_quicksearch($keys = NULL){
+	$results = video_search_search_execute($keys);
+
+	$view = node_view_multiple($results,'search_result');
+
+	$render['results'] = array(
+		'nodes' => $view,
+		'#prefix' => '<div id="video-quicksearch-results">',
+		'#suffix' => '</div>',
+	);
+
+	return $render;
+}
