@@ -1,0 +1,16 @@
+/**
+ * Mixins
+ */
+/**
+ * Colors
+ */
+/* line 4, ../sass/video.scss */
+#video-quicksearch-form .form-item-search {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+/* line 7, ../sass/video.scss */
+#video-quicksearch-form #edit-submit {
+  display: none;
+}

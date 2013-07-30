@@ -17,7 +17,7 @@
     attach: function (context, settings) {
     	$('#video-quicksearch-form #edit-search',context).typeWatch({
     		callback: function(value) { $('#video-quicksearch-form #edit-submit').mousedown() },
-    		captureLength: 4,
+    		captureLength: 3,
     	});
     }
   };

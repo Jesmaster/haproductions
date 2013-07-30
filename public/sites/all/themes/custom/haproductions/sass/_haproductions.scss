@@ -1,6 +1,16 @@
 @import "zen/base";
 
 /**
+ * Mixins
+ */
+
+@mixin inline-block{
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+}
+
+/**
  * Colors
  */
 
@@ -9,4 +19,4 @@ $color-body-background: #000F1E;
 $color-page-background: #fff;
 
 //Text
-$color-text:#333;
+$color-text: #333;

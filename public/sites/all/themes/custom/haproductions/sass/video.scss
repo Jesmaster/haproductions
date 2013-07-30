@@ -1,0 +1,10 @@
+@import "_haproductions";
+
+#video-quicksearch-form{
+	.form-item-search{
+		@include inline-block;
+	}
+	#edit-submit{
+		display:none;
+	}
+}

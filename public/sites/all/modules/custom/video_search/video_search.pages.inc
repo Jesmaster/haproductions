@@ -24,8 +24,6 @@ function video_quicksearch_form($form,&$form_state){
 	$form['submit'] = array(
 		'#type' => 'submit',
 		'#value' => 'Search',
-		'#prefix' => '<div style="display:none;">',
-		'#suffix' => '</div>',
 		'#ajax' => array(
 			'callback' => 'video_search_quicksearch_ajax_callback',
 			'wrapper' => 'video-quicksearch-results',
