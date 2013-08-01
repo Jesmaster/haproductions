@@ -88,8 +88,8 @@ function video_search_search_execute($keys = NULL, $conditions = NULL) {
     return array();
   }
 
-  // Add the ranking expressions.
-  _node_rankings($query);
+  $query->innerJoin('field_data_field_legacy','l','n.nid = l.entity_id');
+  $query->orderBy('l.field_legacy_value','asc')->orderBy('n.title','asc');
 
   // Load results.
   $find = $query->execute();
