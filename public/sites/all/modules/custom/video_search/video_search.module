@@ -97,15 +97,13 @@ function video_search_search_execute($keys = NULL, $conditions = NULL) {
   foreach ($find as $item) {
     // Render the node.
     $node = node_load($item->sid);
-    $results[] = $node;
+    $results[] = node_view($node,'search_result');
   }
   return $results;
 }
 
 function video_search_quicksearch($keys = NULL){
-	$results = video_search_search_execute($keys);
-
-	$view = node_view_multiple($results,'search_result');
+	$view = video_search_search_execute($keys);
 
 	$render['results'] = array(
 		'nodes' => $view,

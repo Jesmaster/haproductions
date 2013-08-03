@@ -17,10 +17,26 @@
     attach: function (context, settings) {
     	$('#video-quicksearch-form #edit-search',context).typeWatch({
     		callback: function(value) { $('#video-quicksearch-form #edit-submit').mousedown() },
-    		captureLength: 3,
+    		captureLength: 3
     	});
 
-    	$('.node-video.view-mode-search_result .field-items',context).cycle();
+		var $videos = $('.node-video.view-mode-search_result',context);
+
+		if($videos.length > 0){
+	    	$videos.imagesLoaded().done(function(){
+	    		$(context).masonry({ columnWidth: 256, gutter: 20});
+	    		
+				$videos.each(function(){
+					$slideshow = $('.field-name-field-images .field-items',this);
+					$slideshow.cycle({
+			    		log: false,
+			    		slides: '.field-item',
+			    	});
+				});
+				
+	    	});
+    	}
+
     }
   };
 

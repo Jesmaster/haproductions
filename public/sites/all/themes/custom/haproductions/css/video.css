@@ -18,10 +18,14 @@
 /* line 13, ../sass/video.scss */
 .node-video.view-mode-search_result {
   width: 256px;
-  height: 240px;
   margin-bottom: 20px;
 }
-/* line 18, ../sass/video.scss */
+/* line 17, ../sass/video.scss */
 .node-video.view-mode-search_result .node-title {
   text-align: center;
+}
+/* line 21, ../sass/video.scss */
+.node-video.view-mode-search_result .field-name-field-images {
+  max-height: 192px;
+  overflow: hidden;
 }

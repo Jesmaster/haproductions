@@ -1,0 +1,7 @@
+name = imagesLoaded
+description = imagesLoaded Library
+core = 7.x
+package = imagesLoaded
+version = "7.x-1.1"
+
+dependencies[] = libraries

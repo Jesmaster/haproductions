@@ -1,0 +1,22 @@
+<?php
+
+function masonry_libraries_info(){
+	$libraries['masonry'] = array(
+		'name' => 'masonry',
+		'vendor url' => 'http://masonry.desandro.com/',
+		'download url' => 'http://masonry.desandro.com/masonry.pkgd.min.js',
+	    'version arguments' => array(
+	      'file' => 'masonry.pkgd.min.js',
+	      'pattern' => '@Masonry\ PACKAGED\s+([0-9a-zA-Z\.-]+)@',
+	      'lines' => 2,
+	      'cols' => 27,
+	    ),
+	    'files' => array(
+	    	'js' => array(
+	    		'masonry.pkgd.min.js',
+	    	),
+	    ),
+	);
+
+	return $libraries;
+}

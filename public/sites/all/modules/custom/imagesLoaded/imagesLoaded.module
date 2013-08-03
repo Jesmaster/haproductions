@@ -1,0 +1,22 @@
+<?php
+
+function imagesLoaded_libraries_info(){
+	$libraries['imagesLoaded'] = array(
+		'name' => 'imagesLoaded',
+		'vendor url' => 'http://desandro.github.io/imagesloaded/',
+		'download url' => 'http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js',
+	    'version arguments' => array(
+	      'file' => 'imagesloaded.pkgd.min.js',
+	      'pattern' => '@imagesLoaded\ PACKAGED\s+([0-9a-zA-Z\.-]+)@',
+	      'lines' => 2,
+	      'cols' => 32,
+	    ),
+	    'files' => array(
+	    	'js' => array(
+	    		'imagesloaded.pkgd.min.js',
+	    	),
+	    ),
+	);
+
+	return $libraries;
+}
