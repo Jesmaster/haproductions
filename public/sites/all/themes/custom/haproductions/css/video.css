@@ -14,3 +14,14 @@
 #video-quicksearch-form #edit-submit {
   display: none;
 }
+
+/* line 13, ../sass/video.scss */
+.node-video.view-mode-search_result {
+  width: 256px;
+  height: 240px;
+  margin-bottom: 20px;
+}
+/* line 18, ../sass/video.scss */
+.node-video.view-mode-search_result .node-title {
+  text-align: center;
+}

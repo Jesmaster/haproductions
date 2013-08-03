@@ -8,3 +8,15 @@
 		display:none;
 	}
 }
+
+.node-video{
+	&.view-mode-search_result{
+		width:256px;
+		height:48px + 192px;
+		margin-bottom:20px;
+
+		.node-title{
+			text-align:center;
+		}
+	}
+}

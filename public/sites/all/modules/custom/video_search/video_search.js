@@ -19,6 +19,8 @@
     		callback: function(value) { $('#video-quicksearch-form #edit-submit').mousedown() },
     		captureLength: 3,
     	});
+
+    	$('.node-video.view-mode-search_result .field-items',context).cycle();
     }
   };
 

@@ -1,0 +1,22 @@
+<?php
+
+function jquery_cycle_libraries_info(){
+	$libraries['jquery_cycle'] = array(
+		'name' => 'jquery_cycle',
+		'vendor url' => 'https://raw.github.com/malsup/cycle/',
+		'download url' => 'https://raw.github.com/malsup/cycle/master/jquery.cycle.all.js',
+	    'version arguments' => array(
+	      'file' => 'jquery.cycle.all.js',
+	      'pattern' => '@Version:\s+([0-9a-zA-Z\.-]+)@',
+	      'lines' => 6,
+	      'cols' => 66,
+	    ),
+	    'files' => array(
+	    	'js' => array(
+	    		'jquery.cycle.all.js',
+	    	),
+	    ),
+	);
+
+	return $libraries;
+}
