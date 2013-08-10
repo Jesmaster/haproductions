@@ -16,7 +16,10 @@
   Drupal.behaviors.video_search = {
     attach: function (context, settings) {
     	$('#video-quicksearch-form #edit-search',context).typeWatch({
-    		callback: function(value) { $('#video-quicksearch-form #edit-submit').mousedown() },
+    		callback: function(value) {
+    			$('#video-quicksearch-form #edit-submit').mousedown();
+    			$('#video-quicksearch-form #edit-search').prop('disabled',true);
+    		},
     		captureLength: 3
     	});
 
@@ -36,6 +39,10 @@
 				
 	    	});
     	}
+
+      $.fn.enable_search = function() {
+      	$(this).prop('disabled',false);
+      };
 
     }
   };

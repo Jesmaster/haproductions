@@ -37,5 +37,8 @@ function video_quicksearch_form($form,&$form_state){
 }
 
 function video_search_quicksearch_ajax_callback($form,&$form_state){
-	return video_search_quicksearch($form_state['values']['search']);
+	$commands[] = ajax_command_insert(NULL,drupal_render(video_search_quicksearch($form_state['values']['search'])));
+	$commands[] = ajax_command_invoke('#video-quicksearch-form #edit-search','enable_search');
+
+	return array('#type' => 'ajax', '#commands' => $commands);
 }
