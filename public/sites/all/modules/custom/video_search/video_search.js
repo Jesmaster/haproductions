@@ -27,7 +27,12 @@
 
 		if($videos.length > 0){
 	    	$videos.imagesLoaded().done(function(){
-	    		$(context).masonry({ columnWidth: 256, gutter: 20});
+          if($('#video-quicksearch-results',context).length > 0){
+            $('#video-quicksearch-results',context).masonry({ columnWidth: 256, gutter: 20});
+          }
+          else{
+	    		 $(context).masonry({ columnWidth: 256, gutter: 20});
+          }
 	    		
 				$videos.each(function(){
 					$slideshow = $('.field-name-field-images .field-items',this);
@@ -35,6 +40,10 @@
 			    		log: false,
 			    		slides: '.field-item',
 			    	});
+
+          $('.overlay',this).bind('click',function(){
+            $('a',this)[0].click();
+          });
 				});
 				
 	    	});

@@ -10,10 +10,7 @@ function video_search_page_callback(){
 	drupal_add_js(drupal_get_path('module', 'video_search').'/video_search.js');
 
 	$render['form'] = drupal_get_form('video_quicksearch_form');
-	$render['results'] = array(
-		'#prefix' => '<div id="video-quicksearch-results">',
-		'#suffix' => '</div>',
-	);
+	$render['results'] = video_search_quicksearch();
 
 	return $render;
 }

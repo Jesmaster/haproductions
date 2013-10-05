@@ -73,7 +73,7 @@ function video_search_search_reset() {
  */
 function video_search_search_execute($keys = NULL, $conditions = NULL) {
   // Build matching conditions
-  $query = db_select('search_index', 'i', array('target' => 'slave'))->extend('SearchQuery')->extend('PagerDefault');
+  $query = db_select('search_index', 'i', array('target' => 'slave'))->extend('SearchQuery');
   $query->join('node', 'n', 'n.nid = i.sid');
   $query->condition('n.status', 1)->condition('n.type','video')->addTag('node_access')->searchExpression($keys, 'video_search');
 
@@ -88,8 +88,9 @@ function video_search_search_execute($keys = NULL, $conditions = NULL) {
     return array();
   }
 
+  $query->innerJoin('field_data_field_date_created', 'dc', 'n.nid = dc.entity_id');
   $query->innerJoin('field_data_field_legacy','l','n.nid = l.entity_id');
-  $query->orderBy('l.field_legacy_value','asc')->orderBy('n.title','asc');
+  $query->orderBy('dc.field_date_created_value','DESC')->orderBy('l.field_legacy_value','asc')->orderBy('n.title','asc');
 
   // Load results.
   $find = $query->execute();
@@ -103,7 +104,24 @@ function video_search_search_execute($keys = NULL, $conditions = NULL) {
 }
 
 function video_search_quicksearch($keys = NULL){
-	$view = video_search_search_execute($keys);
+  if($keys === NULL){
+    $query = db_select('node','n')
+              ->fields('n',array('nid'))
+              ->condition('type','video')
+              ->condition('status',1);
+
+    $query->innerJoin('field_data_field_date_created', 'dc', 'n.nid = dc.entity_id');
+    $query->innerJoin('field_data_field_legacy','l','n.nid = l.entity_id');
+    $query->orderBy('dc.field_date_created_value','DESC')->orderBy('l.field_legacy_value','asc')->orderBy('n.title','asc');
+
+    $result = $query->execute();
+    foreach($result as $row){
+      $view[] = node_view(node_load($row->nid),'search_result');
+    }
+  }
+  else{
+	 $view = video_search_search_execute($keys);
+  }
 
 	$render['results'] = array(
 		'nodes' => $view,
