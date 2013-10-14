@@ -1,227 +1,190 @@
 <?php
+
 /**
- * @file
- * Contains the theme's functions to manipulate Drupal's default markup.
+ * Implements template_preprocess_html().
  *
- * A QUICK OVERVIEW OF DRUPAL THEMING
- *
- *   The default HTML for all of Drupal's markup is specified by its modules.
- *   For example, the comment.module provides the default HTML markup and CSS
- *   styling that is wrapped around each comment. Fortunately, each piece of
- *   markup can optionally be overridden by the theme.
- *
- *   Drupal deals with each chunk of content using a "theme hook". The raw
- *   content is placed in PHP variables and passed through the theme hook, which
- *   can either be a template file (which you should already be familiary with)
- *   or a theme function. For example, the "comment" theme hook is implemented
- *   with a comment.tpl.php template file, but the "breadcrumb" theme hooks is
- *   implemented with a theme_breadcrumb() theme function. Regardless if the
- *   theme hook uses a template file or theme function, the template or function
- *   does the same kind of work; it takes the PHP variables passed to it and
- *   wraps the raw content with the desired HTML markup.
- *
- *   Most theme hooks are implemented with template files. Theme hooks that use
- *   theme functions do so for performance reasons - theme_field() is faster
- *   than a field.tpl.php - or for legacy reasons - theme_breadcrumb() has "been
- *   that way forever."
- *
- *   The variables used by theme functions or template files come from a handful
- *   of sources:
- *   - the contents of other theme hooks that have already been rendered into
- *     HTML. For example, the HTML from theme_breadcrumb() is put into the
- *     $breadcrumb variable of the page.tpl.php template file.
- *   - raw data provided directly by a module (often pulled from a database)
- *   - a "render element" provided directly by a module. A render element is a
- *     nested PHP array which contains both content and meta data with hints on
- *     how the content should be rendered. If a variable in a template file is a
- *     render element, it needs to be rendered with the render() function and
- *     then printed using:
- *       <?php print render($variable); ?>
- *
- * ABOUT THE TEMPLATE.PHP FILE
- *
- *   The template.php file is one of the most useful files when creating or
- *   modifying Drupal themes. With this file you can do three things:
- *   - Modify any theme hooks variables or add your own variables, using
- *     preprocess or process functions.
- *   - Override any theme function. That is, replace a module's default theme
- *     function with one you write.
- *   - Call hook_*_alter() functions which allow you to alter various parts of
- *     Drupal's internals, including the render elements in forms. The most
- *     useful of which include hook_form_alter(), hook_form_FORM_ID_alter(),
- *     and hook_page_alter(). See api.drupal.org for more information about
- *     _alter functions.
- *
- * OVERRIDING THEME FUNCTIONS
- *
- *   If a theme hook uses a theme function, Drupal will use the default theme
- *   function unless your theme overrides it. To override a theme function, you
- *   have to first find the theme function that generates the output. (The
- *   api.drupal.org website is a good place to find which file contains which
- *   function.) Then you can copy the original function in its entirety and
- *   paste it in this template.php file, changing the prefix from theme_ to
- *   haproductions_. For example:
- *
- *     original, found in modules/field/field.module: theme_field()
- *     theme override, found in template.php: haproductions_field()
- *
- *   where haproductions is the name of your sub-theme. For example, the
- *   zen_classic theme would define a zen_classic_field() function.
- *
- *   Note that base themes can also override theme functions. And those
- *   overrides will be used by sub-themes unless the sub-theme chooses to
- *   override again.
- *
- *   Zen core only overrides one theme function. If you wish to override it, you
- *   should first look at how Zen core implements this function:
- *     theme_breadcrumbs()      in zen/template.php
- *
- *   For more information, please visit the Theme Developer's Guide on
- *   Drupal.org: http://drupal.org/node/173880
- *
- * CREATE OR MODIFY VARIABLES FOR YOUR THEME
- *
- *   Each tpl.php template file has several variables which hold various pieces
- *   of content. You can modify those variables (or add new ones) before they
- *   are used in the template files by using preprocess functions.
- *
- *   This makes THEME_preprocess_HOOK() functions the most powerful functions
- *   available to themers.
- *
- *   It works by having one preprocess function for each template file or its
- *   derivatives (called theme hook suggestions). For example:
- *     THEME_preprocess_page    alters the variables for page.tpl.php
- *     THEME_preprocess_node    alters the variables for node.tpl.php or
- *                              for node--forum.tpl.php
- *     THEME_preprocess_comment alters the variables for comment.tpl.php
- *     THEME_preprocess_block   alters the variables for block.tpl.php
- *
- *   For more information on preprocess functions and theme hook suggestions,
- *   please visit the Theme Developer's Guide on Drupal.org:
- *   http://drupal.org/node/223440 and http://drupal.org/node/1089656
  */
+//function haproductions_preprocess_html(&$variables) {
+//  // Add conditional CSS for IE. To use uncomment below and add IE css file
+//  drupal_add_css(path_to_theme() . '/css/ie.css', array('weight' => CSS_THEME, 'browsers' => array('!IE' => FALSE), 'preprocess' => FALSE));
+//
+//  // Need legacy support for IE downgrade to Foundation 2 or use JS file below
+//  // drupal_add_js('http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js', 'external');
+//}
+
+/**
+ * Implements template_preprocess_page
+ *
+ */
+//function haproductions_preprocess_page(&$variables) {
+//}
+
+/**
+ * Implements template_preprocess_node
+ *
+ */
+//function haproductions_preprocess_node(&$variables) {
+//}
+
+/**
+ * Implements hook_preprocess_block()
+ */
+//function haproductions_preprocess_block(&$variables) {
+//  // Add wrapping div with global class to all block content sections.
+//  $variables['content_attributes_array']['class'][] = 'block-content';
+//
+//  // Convenience variable for classes based on block ID
+//  $block_id = $variables['block']->module . '-' . $variables['block']->delta;
+//
+//  // Add classes based on a specific block
+//  switch ($block_id) {
+//    // System Navigation block
+//    case 'system-navigation':
+//      // Custom class for entire block
+//      $variables['classes_array'][] = 'system-nav';
+//      // Custom class for block title
+//      $variables['title_attributes_array']['class'][] = 'system-nav-title';
+//      // Wrapping div with custom class for block content
+//      $variables['content_attributes_array']['class'] = 'system-nav-content';
+//      break;
+//
+//    // User Login block
+//    case 'user-login':
+//      // Hide title
+//      $variables['title_attributes_array']['class'][] = 'element-invisible';
+//      break;
+//
+//    // Example of adding Foundation classes
+//    case 'block-foo': // Target the block ID
+//      // Set grid column or mobile classes or anything else you want.
+//      $variables['classes_array'][] = 'six columns';
+//      break;
+//  }
+//
+//  // Add template suggestions for blocks from specific modules.
+//  switch($variables['elements']['#block']->module) {
+//    case 'menu':
+//      $variables['theme_hook_suggestions'][] = 'block__nav';
+//    break;
+//  }
+//}
+
+//function haproductions_preprocess_views_view(&$variables) {
+//}
+
+/**
+ * Implements template_preprocess_panels_pane().
+ *
+ */
+//function haproductions_preprocess_panels_pane(&$variables) {
+//}
+
+/**
+ * Implements template_preprocess_views_views_fields().
+ *
+ */
+//function haproductions_preprocess_views_view_fields(&$variables) {
+//}
+
+/**
+ * Implements theme_form_element_label()
+ * Use foundation tooltips
+ */
+//function haproductions_form_element_label($variables) {
+//  if (!empty($variables['element']['#title'])) {
+//    $variables['element']['#title'] = '<span class="secondary label">' . $variables['element']['#title'] . '</span>';
+//  }
+//  if (!empty($variables['element']['#description'])) {
+//    $variables['element']['#description'] = ' <span data-tooltip="top" class="has-tip tip-top" data-width="250" title="' . $variables['element']['#description'] . '">' . t('More information?') . '</span>';
+//  }
+//  return theme_form_element_label($variables);
+//}
+
+/**
+ * Implements hook_preprocess_button().
+ */
+//function haproductions_preprocess_button(&$variables) {
+//  $variables['element']['#attributes']['class'][] = 'button';
+//  if (isset($variables['element']['#parents'][0]) && $variables['element']['#parents'][0] == 'submit') {
+//    $variables['element']['#attributes']['class'][] = 'secondary';
+//  }
+//}
+
+/**
+ * Implements hook_form_alter()
+ * Example of using foundation sexy buttons
+ */
+//function haproductions_form_alter(&$form, &$form_state, $form_id) {
+//  // Sexy submit buttons
+//  if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
+//    $form['actions']['submit']['#attributes'] = array('class' => array('primary', 'button', 'radius'));
+//  }
+//}
+
+// Sexy preview buttons
+//function haproductions_form_comment_form_alter(&$form, &$form_state) {
+//  $form['actions']['preview']['#attributes']['class'][] = array('class' => array('secondary', 'button', 'radius'));
+//}
 
 
 /**
- * Override or insert variables into the maintenance page template.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("maintenance_page" in this case.)
+ * Implements template_preprocess_panels_pane().
  */
-/* -- Delete this line if you want to use this function
-function haproductions_preprocess_maintenance_page(&$variables, $hook) {
-  // When a variable is manipulated or added in preprocess_html or
-  // preprocess_page, that same work is probably needed for the maintenance page
-  // as well, so we can just re-use those functions to do that work here.
-  haproductions_preprocess_html($variables, $hook);
-  haproductions_preprocess_page($variables, $hook);
+// function zurb_foundation_preprocess_panels_pane(&$variables) {
+// }
+
+/**
+* Implements template_preprocess_views_views_fields().
+*/
+/* Delete me to enable
+function THEMENAME_preprocess_views_view_fields(&$variables) {
+ if ($variables['view']->name == 'nodequeue_1') {
+
+   // Check if we have both an image and a summary
+   if (isset($variables['fields']['field_image'])) {
+
+     // If a combined field has been created, unset it and just show image
+     if (isset($variables['fields']['nothing'])) {
+       unset($variables['fields']['nothing']);
+     }
+
+   } elseif (isset($variables['fields']['title'])) {
+     unset ($variables['fields']['title']);
+   }
+
+   // Always unset the separate summary if set
+   if (isset($variables['fields']['field_summary'])) {
+     unset($variables['fields']['field_summary']);
+   }
+ }
 }
+
 // */
 
 /**
- * Override or insert variables into the html templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("html" in this case.)
+ * Implements hook_css_alter().
  */
-/* -- Delete this line if you want to use this function
-function haproductions_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+function haproductions_css_alter(&$css) {
+  // Always remove base theme CSS.
+  $theme_path = drupal_get_path('theme', 'zurb_foundation');
 
-  // The body tag's classes are controlled by the $classes_array variable. To
-  // remove a class from $classes_array, use array_diff().
-  //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
-}
-// */
-
-/**
- * Override or insert variables into the page templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("page" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function haproductions_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
-
-/**
- * Override or insert variables into the node templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("node" in this case.)
- */
-
-function haproductions_preprocess_node(&$variables, $hook) {
-  $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '__'.$variables['view_mode'];
-  $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->nid . '__'.$variables['view_mode'];
-
-  // Optionally, run node-type-specific preprocess functions, like
-  // haproductions_preprocess_node_page() or haproductions_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $variables['node']->type;
-  if (function_exists($function)) {
-    $function($variables, $hook);
+  foreach($css as $path => $values) {
+    if(strpos($path, $theme_path) === 0) {
+      unset($css[$path]);
+    }
   }
 }
-// */
 
 /**
- * Override or insert variables into the comment templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("comment" in this case.)
+ * Implements hook_js_alter().
  */
-/* -- Delete this line if you want to use this function
-function haproductions_preprocess_comment(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
+function haproductions_js_alter(&$js) {
+  // Always remove base theme JS.
+  $theme_path = drupal_get_path('theme', 'zurb_foundation');
 
-/**
- * Override or insert variables into the region templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("region" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function haproductions_preprocess_region(&$variables, $hook) {
-  // Don't use Zen's region--sidebar.tpl.php template for sidebars.
-  //if (strpos($variables['region'], 'sidebar_') === 0) {
-  //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('region__sidebar'));
-  //}
+  foreach($js as $path => $values) {
+    if(strpos($path, $theme_path) === 0) {
+      unset($js[$path]);
+    }
+  }
 }
-// */
-
-/**
- * Override or insert variables into the block templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("block" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function haproductions_preprocess_block(&$variables, $hook) {
-  // Add a count to all the blocks in the region.
-  // $variables['classes_array'][] = 'count-' . $variables['block_id'];
-
-  // By default, Zen will use the block--no-wrapper.tpl.php for the main
-  // content. This optional bit of code undoes that:
-  //if ($variables['block_html_id'] == 'block-system-main') {
-  //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('block__no_wrapper'));
-  //}
-}
-// */
