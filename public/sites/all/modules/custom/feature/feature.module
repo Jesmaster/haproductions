@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function feature_block_info() {
+	$blocks['feature'] = array(
+		'info' => t('Feature Content'),
+		'cache' => DRUPAL_NO_CACHE,
+	);
+
+	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function feature_block_view($delta = '') {
+	switch ($delta) {
+		case 'feature':
+			if($node = menu_get_object()){
+				return array('content' => node_view($node,'feature'));
+			}
+			break;
+	}
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function feature_entity_info_alter(&$entity_info) {
+	$entity_info['node']['view modes']['feature'] = array(
+		'label' => 'Feature',
+		'custom settings' => TRUE,
+	);
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function feature_node_view($node, $view_mode, $langcode) {
+	if($view_mode == 'feature'){
+		
+		//If a youtube ID is provided, do not display the images in the feature area
+		if($items = field_get_items('node', $node, 'field_youtube_id')){
+			foreach($items as $item){
+				if(!text_field_is_empty($item, 'field_youtube_id')){
+					$node->content['field_images'] = array();
+					break;
+				}
+			}
+		}
+	}
+}
