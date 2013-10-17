@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function sidebar_block_info() {
+	$blocks['sidebar'] = array(
+		'info' => t('Sidebar Content'),
+		'cache' => DRUPAL_NO_CACHE,
+	);
+
+	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function sidebar_block_view($delta = '') {
+	switch ($delta) {
+		case 'sidebar':
+			if($node = menu_get_object()){
+				return array('content' => node_view($node,'sidebar'));
+			}
+			break;
+	}
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function sidebar_entity_info_alter(&$entity_info) {
+	$entity_info['node']['view modes']['sidebar'] = array(
+		'label' => 'Sidebar',
+		'custom settings' => TRUE,
+	);
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function sidebar_node_view($node, $view_mode, $langcode) {
+	if($view_mode == 'sidebar'){
+
+	}
+}
