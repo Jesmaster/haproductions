@@ -112,7 +112,7 @@ function video_search_quicksearch($keys = NULL){
 
     $query->innerJoin('field_data_field_date_created', 'dc', 'n.nid = dc.entity_id');
     $query->innerJoin('field_data_field_legacy','l','n.nid = l.entity_id');
-    $query->orderBy('dc.field_date_created_value','DESC')->orderBy('l.field_legacy_value','asc')->orderBy('n.title','asc');
+    $query->orderBy('l.field_legacy_value','asc')->orderBy('dc.field_date_created_value','DESC')->orderBy('n.title','asc');
 
     $result = $query->execute();
     foreach($result as $row){

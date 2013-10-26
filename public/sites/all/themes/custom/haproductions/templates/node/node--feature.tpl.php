@@ -78,6 +78,6 @@
 
 <?php
     hide($content['comments']);
-    hide($content['links']); 
+    hide($content['links']);
     print render($content);
 ?>

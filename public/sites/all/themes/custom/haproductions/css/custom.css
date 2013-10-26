@@ -29,6 +29,12 @@
 /*
  * Theme specific variables.
  */
+@font-face {
+  font-family: 'Norwester';
+  src: url("../fonts/webfonts/norwester.eot");
+  src: url("../fonts/webfonts/norwester.eot?#iefix") format("embedded-opentype"), url("../fonts/webfonts/norwester.woff") format("woff"), url("../fonts/webfonts/norwester.ttf") format("truetype");
+}
+
 /*
  * Foundation Variables
  *
@@ -7357,6 +7363,139 @@ a.th {
 /* line 29, ../scss/base/_drupal.scss */
 .item-list .pager li {
   padding: 0;
+}
+
+/* line 8, ../scss/base/_elements.scss */
+body {
+  font-family: Lato;
+  font-size: 1.2em;
+  cursor: auto;
+}
+/* line 13, ../scss/base/_elements.scss */
+body.light {
+  background-color: #fff;
+  color: #4d4d4d;
+}
+/* line 18, ../scss/base/_elements.scss */
+body.dark {
+  background-color: #4d4d4d;
+  color: #f2ede6;
+}
+
+/* line 29, ../scss/base/_elements.scss */
+h1 {
+  font-size: 6em;
+}
+
+/* line 34, ../scss/base/_elements.scss */
+h2,
+h3 {
+  font-size: 2em;
+}
+
+/* line 38, ../scss/base/_elements.scss */
+h4 {
+  font-size: 1.5em;
+}
+
+/* line 43, ../scss/base/_elements.scss */
+h1,
+h3 {
+  font-family: Norwester;
+}
+/* line 46, ../scss/base/_elements.scss */
+body.light h1, body.light
+h3 {
+  color: #534741;
+}
+/* line 49, ../scss/base/_elements.scss */
+body.dark h1, body.dark
+h3 {
+  color: #f5e8d8;
+}
+
+/* line 55, ../scss/base/_elements.scss */
+h2,
+h4 {
+  font-family: 'Yanone Kaffeesatz';
+}
+/* line 58, ../scss/base/_elements.scss */
+body.light h2, body.light
+h4 {
+  color: #736357;
+}
+/* line 62, ../scss/base/_elements.scss */
+body.dark h2, body.dark
+h4 {
+  color: #998675;
+}
+
+/* line 70, ../scss/base/_elements.scss */
+body.light a {
+  color: #384d8c;
+}
+/* line 74, ../scss/base/_elements.scss */
+body.dark a {
+  color: #c1cae8;
+}
+
+/* line 79, ../scss/base/_elements.scss */
+p {
+  font-size: inherit;
+}
+
+/* line 13, ../scss/components/_blocks.scss */
+.content-sidebar .block-title.panel {
+  margin-bottom: 0;
+  padding: 0.5em;
+}
+/* line 17, ../scss/components/_blocks.scss */
+body.light .content-sidebar .block-title.panel {
+  border-color: #384d8c;
+}
+/* line 20, ../scss/components/_blocks.scss */
+body.dark .content-sidebar .block-title.panel {
+  border-color: #7988b5;
+}
+/* line 25, ../scss/components/_blocks.scss */
+body.light .content-sidebar .block-title {
+  background-color: #384d8c;
+  color: #c1cae8;
+}
+/* line 29, ../scss/components/_blocks.scss */
+body.dark .content-sidebar .block-title {
+  background-color: #7988b5;
+  color: #e6ebff;
+}
+/* line 35, ../scss/components/_blocks.scss */
+.content-sidebar .block-content {
+  font-size: 1em;
+}
+/* line 38, ../scss/components/_blocks.scss */
+body.light .content-sidebar .block-content.panel {
+  border-color: #7988b5;
+}
+/* line 41, ../scss/components/_blocks.scss */
+body.dark .content-sidebar .block-content.panel {
+  border-color: #e6ebff;
+}
+/* line 46, ../scss/components/_blocks.scss */
+body.light .content-sidebar .block-content {
+  background-color: #7988b5;
+  color: #e6ebff;
+}
+/* line 50, ../scss/components/_blocks.scss */
+body.dark .content-sidebar .block-content {
+  background-color: #e6ebff;
+  color: #384d8c;
+}
+/* line 56, ../scss/components/_blocks.scss */
+body.light .content-sidebar .block-content h4 {
+  color: #c1cae8;
+}
+/* line 59, ../scss/components/_blocks.scss */
+body.dark .content-sidebar .block-content h4 {
+  color: #7988b5;
 }
 
 /* line 2, ../scss/theme/_video.scss */

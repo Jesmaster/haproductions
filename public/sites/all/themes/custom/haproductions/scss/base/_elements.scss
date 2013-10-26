@@ -5,14 +5,80 @@
 // - Also, before adding styles be sure to modify variables in the
 //   "scss/_variables.scss" file. You may not need to write any code.
 
+body{
+	font-family:Lato;
+	font-size:1.2em;
+	cursor:auto;
+
+	&.light{
+		background-color:#fff;
+		color:$color_gray;
+	}
+
+	&.dark{
+		background-color:$color_gray;
+		color:$color_light_beige;
+	}
+}
+
 // Headings
 //------------------------------------------
 // h1, h2, h3,
 // h4, h5, h6 {}
 
+h1{
+	font-size:6em;
+}
+
+h2,
+h3{
+	font-size:2em;
+}
+
+h4{
+	font-size:1.5em;
+}
+
+h1,
+h3{
+	font-family:Norwester;
+
+	body.light &{
+		color:$color_dark_brown;
+	}
+	body.dark &{
+		color:$color_beige;
+	}
+}
+
+h2,
+h4{
+	font-family:'Yanone Kaffeesatz';
+
+	body.light &{
+		color:$color_medium_brown;
+	}
+
+	body.dark &{
+		color:$color_light_brown;
+	}
+}
+
 // Anchors
 //-----------------------------------------------------------------------------
-// a {}
+a {
+	body.light &{
+		color:$color_dark_blue;
+	}
+
+	body.dark &{
+		color:$color_medium_light_blue;
+	}	
+}
+
+p{
+	font-size:inherit;
+}
 
 // a:focus {}
 

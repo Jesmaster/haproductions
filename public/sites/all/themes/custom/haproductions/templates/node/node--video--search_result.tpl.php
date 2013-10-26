@@ -97,10 +97,6 @@
     print render($content);
   ?>
 
-  <?php if (!empty($content['field_tags']) && !$is_front): ?>
-    <?php print render($content['field_tags']) ?>
-  <?php endif; ?>
-
   <div class="overlay">
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
   </div>

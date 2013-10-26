@@ -6,3 +6,59 @@
 // Drupal sytem blocks:
 // .block-search {}
 // .block-system {}
+
+
+.content-sidebar{
+	.block-title{
+		&.panel{
+			margin-bottom:0;
+			padding:0.5em;
+
+			body.light &{
+				border-color:$color_dark_blue;
+			}
+			body.dark &{
+				border-color:$color_medium_blue;
+			}
+		}
+
+		body.light &{
+			background-color:$color_dark_blue;
+			color:$color_medium_light_blue;
+		}
+		body.dark &{
+			background-color:$color_medium_blue;
+			color:$color_light_blue;
+		}
+	}
+
+	.block-content{
+		font-size:1em;
+		&.panel{
+			body.light &{
+				border-color:$color_medium_blue;
+			}
+			body.dark &{
+				border-color:$color_light_blue;
+			}
+		}
+
+		body.light &{
+			background-color:$color_medium_blue;
+			color:$color_light_blue;
+		}
+		body.dark &{
+			background-color:$color_light_blue;
+			color:$color_dark_blue;
+		}
+
+		h4{
+			body.light &{
+				color:$color_medium_light_blue;
+			}
+			body.dark &{
+				color:$color_medium_blue;
+			}
+		}
+	}
+}

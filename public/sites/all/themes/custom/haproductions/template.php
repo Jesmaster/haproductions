@@ -4,13 +4,9 @@
  * Implements template_preprocess_html().
  *
  */
-//function haproductions_preprocess_html(&$variables) {
-//  // Add conditional CSS for IE. To use uncomment below and add IE css file
-//  drupal_add_css(path_to_theme() . '/css/ie.css', array('weight' => CSS_THEME, 'browsers' => array('!IE' => FALSE), 'preprocess' => FALSE));
-//
-//  // Need legacy support for IE downgrade to Foundation 2 or use JS file below
-//  // drupal_add_js('http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js', 'external');
-//}
+function haproductions_preprocess_html(&$variables) {
+  $variables['classes_array'][] = 'light';
+}
 
 /**
  * Implements template_preprocess_page
@@ -29,45 +25,14 @@
 /**
  * Implements hook_preprocess_block()
  */
-//function haproductions_preprocess_block(&$variables) {
-//  // Add wrapping div with global class to all block content sections.
-//  $variables['content_attributes_array']['class'][] = 'block-content';
-//
-//  // Convenience variable for classes based on block ID
-//  $block_id = $variables['block']->module . '-' . $variables['block']->delta;
-//
-//  // Add classes based on a specific block
-//  switch ($block_id) {
-//    // System Navigation block
-//    case 'system-navigation':
-//      // Custom class for entire block
-//      $variables['classes_array'][] = 'system-nav';
-//      // Custom class for block title
-//      $variables['title_attributes_array']['class'][] = 'system-nav-title';
-//      // Wrapping div with custom class for block content
-//      $variables['content_attributes_array']['class'] = 'system-nav-content';
-//      break;
-//
-//    // User Login block
-//    case 'user-login':
-//      // Hide title
-//      $variables['title_attributes_array']['class'][] = 'element-invisible';
-//      break;
-//
-//    // Example of adding Foundation classes
-//    case 'block-foo': // Target the block ID
-//      // Set grid column or mobile classes or anything else you want.
-//      $variables['classes_array'][] = 'six columns';
-//      break;
-//  }
-//
-//  // Add template suggestions for blocks from specific modules.
-//  switch($variables['elements']['#block']->module) {
-//    case 'menu':
-//      $variables['theme_hook_suggestions'][] = 'block__nav';
-//    break;
-//  }
-//}
+function haproductions_preprocess_block(&$variables) {
+  $variables['content_attributes_array']['class'][] = 'block-content';
+
+  if($variables['block']->region == 'content_sidebar'){
+    $variables['title_attributes_array']['class'][] = 'panel';
+    $variables['content_attributes_array']['class'][] = 'panel';
+  }
+}
 
 //function haproductions_preprocess_views_view(&$variables) {
 //}
@@ -169,15 +134,15 @@ function haproductions_field__taxonomy_term_reference($variables) {
 
   // Render the label, if it's not hidden.
   if (!$variables['label_hidden']) {
-    $output .= '<div class="field-label">' . $variables['label'] . ': </div>';
+    $output .= '<h4 class="field-label">' . $variables['label'] . ': </h4>';
   }
 
   // Render the items.
-  $output .= ($variables['element']['#label_display'] == 'inline') ? '<ul class="links inline">' : '<ul class="links">';
+  $output .= ($variables['element']['#label_display'] == 'inline') ? '<ul class="links inline">' : '<div class="links">';
   foreach ($variables['items'] as $delta => $item) {
-    $output .= '<li class="taxonomy-term-reference-' . $delta . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</li>';
+    $output .= '<div class="taxonomy-term-reference-' . $delta . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
   }
-  $output .= '</ul>';
+  $output .= '</div>';
 
   // Render the top-level DIV.
   $output = '<div class="' . $variables['classes'] . (!in_array('clearfix', $variables['classes_array']) ? ' clearfix' : '') . '">' . $output . '</div>';

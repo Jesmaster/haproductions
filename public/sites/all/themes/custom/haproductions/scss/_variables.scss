@@ -2,10 +2,23 @@
  * Theme specific variables.
  */
 
+@font-face {font-family: 'Norwester';src: url('../fonts/webfonts/norwester.eot');src: url('../fonts/webfonts/norwester.eot?#iefix') format('embedded-opentype'),url('../fonts/webfonts/norwester.woff') format('woff'),url('../fonts/webfonts/norwester.ttf') format('truetype');}
+
+
 // Optionally, you can add your colors here.
 // ******************************************************
-// $primary-color: #000;
-// $secondary-color: #c00;
+
+$color_dark_brown: #534741;
+$color_medium_brown: #736357;
+$color_light_brown: #998675;
+$color_beige: #F5E8D8;
+$color_light_beige: #F2EDE6;
+$color_gray: #4D4D4D;
+$color_dark_blue: #384D8C;
+$color_medium_blue: #7988B5;
+$color_medium_light_blue: #C1CAE8;
+$color_light_blue: #E6EBFF;
+
 
 
 // Font Families
