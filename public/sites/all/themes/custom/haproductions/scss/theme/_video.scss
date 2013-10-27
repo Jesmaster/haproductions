@@ -1,6 +1,11 @@
 #video-quicksearch-form{
 	.form-item-search{
 		@include inline-block;
+		vertical-align:middle;
+	}
+	#show-all-videos{
+		display:none;
+		margin-left:30px;
 	}
 	#edit-submit{
 		display:none;

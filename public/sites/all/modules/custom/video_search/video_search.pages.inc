@@ -1,6 +1,6 @@
 <?php
 
-function video_search_page_callback(){
+function video_search_page_callback($keywords = ''){
 	$render = array();
 
 	libraries_load('typewatch');
@@ -8,16 +8,21 @@ function video_search_page_callback(){
 	libraries_load('isotope');
 	drupal_add_js(drupal_get_path('module', 'video_search').'/video_search.js');
 
-	$render['form'] = drupal_get_form('video_quicksearch_form');
+	$render['form'] = drupal_get_form('video_quicksearch_form', $keywords);
 	$render['results'] = video_search_quicksearch();
 
 	return $render;
 }
 
-function video_quicksearch_form($form,&$form_state){
+function video_quicksearch_form($form,&$form_state,$keywords){
 	$form['search'] = array(
 		'#title' => 'Type anything to search for videos:',
+		'#default_value' => $keywords, 
 		'#type' => 'textfield',
+	);
+
+	$form['show_all'] = array(
+		'#markup' => '<button id="show-all-videos">Show All</button>',
 	);
 
 	$form['submit'] = array(
@@ -33,8 +38,10 @@ function video_quicksearch_form($form,&$form_state){
 }
 
 function video_search_quicksearch_ajax_callback($form,&$form_state){
-	$commands[] = ajax_command_insert(NULL,drupal_render(video_search_quicksearch($form_state['values']['search'])));
-	$commands[] = ajax_command_invoke('#video-quicksearch-form #edit-search','enable_search');
-
-	return array('#type' => 'ajax', '#commands' => $commands);
+	return array(
+		'#type' => 'ajax',
+		'#commands' => array(
+			array('command' => 'video_search_results', 'data' => video_search_quicksearch($form_state['values']['search']))
+		),
+	);
 }

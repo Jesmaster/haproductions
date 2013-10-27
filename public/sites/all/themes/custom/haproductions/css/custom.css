@@ -7556,20 +7556,26 @@ body.dark .content-sidebar .block-content h4 {
   display: inline-block;
   *display: inline;
   zoom: 1;
+  vertical-align: middle;
 }
-/* line 5, ../scss/theme/_video.scss */
+/* line 6, ../scss/theme/_video.scss */
+#video-quicksearch-form #show-all-videos {
+  display: none;
+  margin-left: 30px;
+}
+/* line 10, ../scss/theme/_video.scss */
 #video-quicksearch-form #edit-submit {
   display: none;
 }
 
-/* line 11, ../scss/theme/_video.scss */
+/* line 16, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result {
   width: 256px;
   height: 192px;
   overflow: hidden;
   margin-bottom: 20px;
 }
-/* line 17, ../scss/theme/_video.scss */
+/* line 22, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result .field-name-field-images {
   height: 192px;
   overflow: hidden;
@@ -7577,7 +7583,7 @@ body.dark .content-sidebar .block-content h4 {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 25, ../scss/theme/_video.scss */
+/* line 30, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result .overlay {
   display: none;
   position: absolute;
@@ -7590,18 +7596,18 @@ body.dark .content-sidebar .block-content h4 {
   height: 192px;
   cursor: pointer;
 }
-/* line 38, ../scss/theme/_video.scss */
+/* line 43, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result:hover .overlay {
   display: block;
 }
-/* line 41, ../scss/theme/_video.scss */
+/* line 46, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result:hover .overlay .node-title {
   width: 200px;
   font-weight: bold;
   margin-left: 20px;
   margin-top: 20px;
 }
-/* line 46, ../scss/theme/_video.scss */
+/* line 51, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result:hover .overlay .node-title a {
   color: #fff;
   text-decoration: none;

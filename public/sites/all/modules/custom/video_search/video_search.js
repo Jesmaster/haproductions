@@ -17,15 +17,14 @@
     attach: function (context, settings) {
     	$('#video-quicksearch-form #edit-search',context).typeWatch({
     		callback: function(value) {
-    			$('#video-quicksearch-form #edit-submit').mousedown();
-    			$('#video-quicksearch-form #edit-search').prop('disabled',true);
+          trigger_quicksearch();
     		},
     		captureLength: 3
     	});
 
-		var $videos = $('.node-video.view-mode-search_result',context);
+  		var $videos = $('.node-video.view-mode-search_result',context);
 
-		if($videos.length > 0){
+  		if($videos.length > 0){
           if($('#video-quicksearch-results',context).length > 0){
             $('#video-quicksearch-results',context).isotope({
               masonry: { 
@@ -33,14 +32,6 @@
                   gutterWidth: 20
               }
             });
-          }
-          else{
-           $(context).isotope({ 
-              masonry: { 
-                columnWidth: 256,
-                gutterWidth: 20
-              }
-           });
           }
           
           $videos.each(function(){
@@ -56,9 +47,43 @@
           });
     	}
 
-      $.fn.enable_search = function() {
-      	$(this).prop('disabled',false);
-      };
+      $('#show-all-videos').bind('click',function(){
+        $('.node-video.view-mode-search_result').removeClass('search-result').removeClass('no-result');
+        $('#video-quicksearch-results').isotope({
+          filter: '*'
+        });
+        $('#video-quicksearch-form #edit-search').val('');
+        $(this).hide();
+        return false;
+      });
+
+      $('#video-quicksearch-form #edit-search').once(function(){
+        if($(this).val() != ''){
+          trigger_quicksearch();
+        }
+      });
+
+      function trigger_quicksearch(){
+        $('#video-quicksearch-form #edit-submit').mousedown();
+        $('#video-quicksearch-form #edit-search').prop('disabled',true);
+      }
+
+      Drupal.ajax.prototype.commands.video_search_results = function(ajax,response,status){
+        $('#video-quicksearch-form #edit-search').removeAttr('disabled').blur().focus();
+
+        $videos = $('.node-video.view-mode-search_result');
+        $videos.removeClass('search-result').addClass('no-result');
+        $.each(response.data, function(key,value){
+          $('#node-'+value).removeClass('no-result').addClass('search-result');
+        });
+
+        $('#video-quicksearch-results').isotope({
+          filter: '.search-result'
+        });
+
+        $('#show-all-videos').show();
+      }
+
     }
   };
 
