@@ -19,8 +19,18 @@ function haproductions_preprocess_html(&$variables) {
  * Implements template_preprocess_node
  *
  */
-//function haproductions_preprocess_node(&$variables) {
-//}
+function haproductions_preprocess_node(&$variables) {
+  if($variables['type'] == 'video'){
+    if($variables['view_mode'] == 'full' || $variables['view_mode'] == 'search_result'){
+      if($variables['node']->is_legacy){
+        $variables['classes_array'][] = 'legacy';
+      }
+      if($variables['node']->non_anime){
+        $variables['classes_array'][] = 'non-anime';
+      }
+    }
+  }
+}
 
 /**
  * Implements hook_preprocess_block()

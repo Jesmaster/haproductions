@@ -16,3 +16,25 @@ function video_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_node_load().
+ */
+function video_node_load($nodes, $types) {
+  $types_we_want_to_process = array('video');
+
+  // Decide whether any of $types are relevant to our purposes.
+  if (count(array_intersect($types_we_want_to_process, $types))) {
+  	foreach($nodes as $delta => $node){
+  		$is_legacy = field_get_items('node', $node, 'field_legacy');
+  		if($is_legacy){
+  			$nodes[$delta]->is_legacy = $is_legacy[0]['value'];
+  		}
+
+  		$nodes[$delta]->non_anime = false;
+  		if(field_get_items('node', $node, 'field_anime') === FALSE){
+  			$nodes[$delta]->non_anime = true;
+  		}
+  	}
+  }
+}

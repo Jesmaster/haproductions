@@ -1,0 +1,22 @@
+<?php
+
+function isotope_libraries_info(){
+	$libraries['isotope'] = array(
+		'name' => 'isotope',
+		'vendor url' => 'http://isotope.metafizzy.co/index.html',
+		'download url' => 'http://isotope.metafizzy.co/jquery.isotope.min.js',
+	    'version arguments' => array(
+	      'file' => 'jquery.isotope.min.js',
+	      'pattern' => '@Isotope\s+([0-9a-zA-Z\.-]+)@',
+	      'lines' => 2,
+	      'cols' => 27,
+	    ),
+	    'files' => array(
+	    	'js' => array(
+	    		'jquery.isotope.min.js',
+	    	),
+	    ),
+	);
+
+	return $libraries;
+}
