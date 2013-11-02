@@ -80,31 +80,38 @@ function video_search_search_reset() {
  * Implements hook_search_execute().
  */
 function video_search_search_execute($keys = NULL, $conditions = NULL) {
-  // Build matching conditions
-  $query = db_select('search_index', 'i', array('target' => 'slave'))->extend('SearchQuery');
-  $query->join('node', 'n', 'n.nid = i.sid');
-  $query->condition('n.status', 1)->condition('n.type','video')->addTag('node_access')->searchExpression($keys, 'video_search');
-
-  // Insert special keywords.
-  $query->setOption('type', 'n.type');
-  $query->setOption('language', 'n.language');
-  if ($query->setOption('term', 'ti.tid')) {
-    $query->join('taxonomy_index', 'ti', 'n.nid = ti.nid');
+  $cache = cache_get('search_'.$keys);
+  if($cache !== FALSE){
+    return $cache->data;
   }
-  // Only continue if the first pass query matches.
-  if (!$query->executeFirstPass()) {
-    return array();
-  }
+  else{
+    // Build matching conditions
+    $query = db_select('search_index', 'i', array('target' => 'slave'))->extend('SearchQuery');
+    $query->join('node', 'n', 'n.nid = i.sid');
+    $query->condition('n.status', 1)->condition('n.type','video')->addTag('node_access')->searchExpression($keys, 'video_search');
 
-  $query->innerJoin('field_data_field_date_created', 'dc', 'n.nid = dc.entity_id');
-  $query->innerJoin('field_data_field_legacy','l','n.nid = l.entity_id');
-  $query->orderBy('dc.field_date_created_value','DESC')->orderBy('l.field_legacy_value','asc');
+    // Insert special keywords.
+    $query->setOption('type', 'n.type');
+    $query->setOption('language', 'n.language');
+    if ($query->setOption('term', 'ti.tid')) {
+      $query->join('taxonomy_index', 'ti', 'n.nid = ti.nid');
+    }
+    // Only continue if the first pass query matches.
+    if (!$query->executeFirstPass()) {
+      return array();
+    }
 
-  // Load results.
-  $find = $query->execute();
-  $results = array();
-  foreach ($find as $item) {
-    $results[] = $item->sid;
+    $query->innerJoin('field_data_field_date_created', 'dc', 'n.nid = dc.entity_id');
+    $query->innerJoin('field_data_field_legacy','l','n.nid = l.entity_id');
+    $query->orderBy('dc.field_date_created_value','DESC')->orderBy('l.field_legacy_value','asc');
+
+    // Load results.
+    $find = $query->execute();
+    $results = array();
+    foreach ($find as $item) {
+      $results[] = $item->sid;
+    }
+    cache_set('search_'.$keys, $results);
   }
   return $results;
 }
@@ -126,7 +133,7 @@ function video_search_quicksearch($keys = NULL){
     }
   }
   else{
-	 return video_search_search_execute($keys);
+	  return video_search_search_execute($keys);
   }
 
 	$render['results'] = array(

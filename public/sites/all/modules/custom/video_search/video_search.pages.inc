@@ -17,7 +17,7 @@ function video_search_page_callback($keywords = ''){
 function video_quicksearch_form($form,&$form_state,$keywords){
 	$form['search'] = array(
 		'#title' => 'Type anything to search for videos:',
-		'#default_value' => $keywords, 
+		'#default_value' => str_replace('-',' ',$keywords), 
 		'#type' => 'textfield',
 	);
 
