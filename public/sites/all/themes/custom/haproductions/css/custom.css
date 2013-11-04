@@ -7439,9 +7439,63 @@ body.dark a {
   color: #c1cae8;
 }
 
-/* line 79, ../scss/base/_elements.scss */
-p {
+/* line 80, ../scss/base/_elements.scss */
+p,
+label {
+  color: inherit;
   font-size: inherit;
+}
+
+/* line 7, ../scss/layout/_header.scss */
+.top-bar {
+  height: auto;
+}
+/* line 9, ../scss/layout/_header.scss */
+body.light .top-bar {
+  background-color: #7988b5;
+  border-top: 4px solid #384d8c;
+}
+/* line 13, ../scss/layout/_header.scss */
+body.dark .top-bar {
+  background-color: #e6ebff;
+  border-top: 4px solid #7988b5;
+}
+/* line 19, ../scss/layout/_header.scss */
+.top-bar .title-area .name h1 {
+  font-size: 2em;
+  line-height: inherit;
+}
+
+/* line 32, ../scss/layout/_header.scss */
+.top-bar-section .left.main-nav {
+  background-color: transparent;
+}
+/* line 34, ../scss/layout/_header.scss */
+.top-bar-section .left.main-nav a:not(.button) {
+  font-family: 'Yanone Kaffeesatz';
+  font-size: 2em;
+  line-height: inherit;
+  background-color: transparent;
+}
+/* line 40, ../scss/layout/_header.scss */
+.top-bar-section .left.main-nav a:not(.button):hover {
+  background-color: transparent;
+}
+/* line 44, ../scss/layout/_header.scss */
+body.light .top-bar-section .left.main-nav a:not(.button) {
+  color: #c1cae8;
+}
+/* line 48, ../scss/layout/_header.scss */
+body.light .top-bar-section .left.main-nav a:not(.button).active, body.light .top-bar-section .left.main-nav a:not(.button):hover {
+  color: #fff;
+}
+/* line 52, ../scss/layout/_header.scss */
+body.dark .top-bar-section .left.main-nav a:not(.button) {
+  color: #7988b5;
+}
+/* line 56, ../scss/layout/_header.scss */
+body.dark .top-bar-section .left.main-nav a:not(.button).active, body.dark .top-bar-section .left.main-nav a:not(.button):hover {
+  color: #384d8c;
 }
 
 /* line 2, ../scss/components/_isotope.scss */
@@ -7551,6 +7605,11 @@ body.dark .content-sidebar .block-content h4 {
   color: #7988b5;
 }
 
+/* line 1, ../scss/components/_pages.scss */
+#page-title {
+  word-wrap: break-word;
+}
+
 /* line 2, ../scss/theme/_video.scss */
 #video-quicksearch-form .form-item-search {
   display: inline-block;
@@ -7563,19 +7622,15 @@ body.dark .content-sidebar .block-content h4 {
   display: none;
   margin-left: 30px;
 }
-/* line 10, ../scss/theme/_video.scss */
-#video-quicksearch-form #edit-submit {
-  display: none;
-}
 
-/* line 16, ../scss/theme/_video.scss */
+/* line 13, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result {
   width: 256px;
   height: 192px;
   overflow: hidden;
   margin-bottom: 20px;
 }
-/* line 22, ../scss/theme/_video.scss */
+/* line 19, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result .field-name-field-images {
   height: 192px;
   overflow: hidden;
@@ -7583,7 +7638,7 @@ body.dark .content-sidebar .block-content h4 {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 30, ../scss/theme/_video.scss */
+/* line 27, ../scss/theme/_video.scss */
 .node-video.view-mode-search_result .overlay {
   display: none;
   position: absolute;
@@ -7596,19 +7651,37 @@ body.dark .content-sidebar .block-content h4 {
   height: 192px;
   cursor: pointer;
 }
-/* line 43, ../scss/theme/_video.scss */
-.node-video.view-mode-search_result:hover .overlay {
-  display: block;
-}
-/* line 46, ../scss/theme/_video.scss */
-.node-video.view-mode-search_result:hover .overlay .node-title {
+/* line 39, ../scss/theme/_video.scss */
+.node-video.view-mode-search_result .node-title {
   width: 200px;
   font-weight: bold;
   margin-left: 20px;
   margin-top: 20px;
 }
-/* line 51, ../scss/theme/_video.scss */
-.node-video.view-mode-search_result:hover .overlay .node-title a {
+/* line 44, ../scss/theme/_video.scss */
+.node-video.view-mode-search_result .node-title a {
   color: #fff;
   text-decoration: none;
+}
+/* line 51, ../scss/theme/_video.scss */
+html.no-touch .node-video.view-mode-search_result:hover .overlay {
+  display: block;
+}
+/* line 57, ../scss/theme/_video.scss */
+html.touch .node-video.view-mode-search_result .overlay {
+  display: block;
+  background-color: transparent;
+}
+/* line 61, ../scss/theme/_video.scss */
+html.touch .node-video.view-mode-search_result .overlay .node-title {
+  background: #000;
+  position: absolute;
+  width: 256px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 5px 0;
+  font-size: 1em;
+  line-height: 1.2em;
 }

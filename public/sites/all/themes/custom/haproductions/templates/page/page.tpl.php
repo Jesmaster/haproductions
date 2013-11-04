@@ -11,8 +11,7 @@
       <?php endif; ?>
         <nav class="top-bar"<?php print $top_bar_options; ?>>
           <ul class="title-area">
-            <li class="name"><h1><?php print $linked_site_name; ?></h1></li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span><?php print $top_bar_menu_text; ?></span></a></li>
+            <li class="name hide-for-medium-down"><h1><?php print $linked_site_name; ?></h1></li>
           </ul>
           <section class="top-bar-section">
             <?php if ($top_bar_main_menu) :?>
@@ -21,6 +20,11 @@
             <?php if ($top_bar_secondary_menu) :?>
               <?php print $top_bar_secondary_menu; ?>
             <?php endif; ?>
+          </section>
+          <section class="top-bar-section hide-for-medium-down">
+            <div class="right">
+              <a id="site-theme" class="small round button">Change Theme</a>
+            </div>
           </section>
         </nav>
       <?php if ($top_bar_classes): ?>
@@ -41,13 +45,13 @@
 
       <?php if ($site_name): ?>
         <?php if ($title): ?>
-          <div id="site-name" class="element-invisible"'>
+          <div id="site-name" class="element-invisible">
             <strong>
               <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
             </strong>
           </div>
         <?php else: /* Use h1 when the content title is empty */ ?>
-          <h1 id="site-name"'>
+          <h1 id="site-name">
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
           </h1>
         <?php endif; ?>

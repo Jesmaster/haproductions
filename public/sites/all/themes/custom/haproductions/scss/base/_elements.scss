@@ -76,7 +76,9 @@ a {
 	}	
 }
 
-p{
+p,
+label{
+	color:inherit;
 	font-size:inherit;
 }
 

@@ -4,15 +4,15 @@
  * Implements hook_menu().
  */
 function video_search_menu() {
-  $items['video-listing'] = array(
-    'title' => t('Video Listing'),
+  $items['videos'] = array(
+    'title' => t('Videos'),
     'page callback' => 'video_search_page_callback',
     'access arguments' => array('access content'),
     'file' => 'video_search.pages.inc',
   );
 
-  $items['video-listing/search/%'] = array(
-    'title' => t('Video Listing'),
+  $items['videos/search/%'] = array(
+    'title' => t('Videos'),
     'page callback' => 'video_search_page_callback',
     'page arguments' => array(2),
     'access arguments' => array('access content'),

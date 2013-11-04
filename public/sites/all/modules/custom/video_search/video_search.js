@@ -15,12 +15,6 @@
 
   Drupal.behaviors.video_search = {
     attach: function (context, settings) {
-    	$('#video-quicksearch-form #edit-search',context).typeWatch({
-    		callback: function(value) {
-          trigger_quicksearch();
-    		},
-    		captureLength: 3
-    	});
 
   		var $videos = $('.node-video.view-mode-search_result',context);
 

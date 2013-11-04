@@ -2,8 +2,7 @@
 
 function video_search_page_callback($keywords = ''){
 	$render = array();
-
-	libraries_load('typewatch');
+	
 	libraries_load('jquery_cycle');
 	libraries_load('isotope');
 	drupal_add_js(drupal_get_path('module', 'video_search').'/video_search.js');
@@ -15,14 +14,15 @@ function video_search_page_callback($keywords = ''){
 }
 
 function video_quicksearch_form($form,&$form_state,$keywords){
-	$form['search'] = array(
-		'#title' => 'Type anything to search for videos:',
-		'#default_value' => str_replace('-',' ',$keywords), 
-		'#type' => 'textfield',
+	$form = array(
+		'#prefix' => '<div class="row">',
+		'#suffix' => '</div>',
 	);
 
-	$form['show_all'] = array(
-		'#markup' => '<button id="show-all-videos">Show All</button>',
+	$form['search'] = array(
+		'#title' => 'Video Search:',
+		'#default_value' => str_replace('-',' ',$keywords), 
+		'#type' => 'textfield',
 	);
 
 	$form['submit'] = array(
@@ -32,6 +32,10 @@ function video_quicksearch_form($form,&$form_state,$keywords){
 			'callback' => 'video_search_quicksearch_ajax_callback',
 			'wrapper' => 'video-quicksearch-results',
 		),
+	);
+
+	$form['show_all'] = array(
+		'#markup' => '<button id="show-all-videos">Show All</button>',
 	);
 
 	return $form;

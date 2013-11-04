@@ -187,3 +187,16 @@ function haproductions_js_alter(&$js) {
     }
   }
 }
+
+/**
+ * Theme function to render a single top bar menu link.
+ */
+function haproductions_zurb_foundation_menu_link($variables) {
+  $link = $variables['link'];
+  if($link['#href'] == 'videos' && $node = menu_get_object()){
+    if($node->type == 'video'){
+      $link['#localized_options']['attributes']['class'][] = 'active';
+    }
+  }
+  return l($link['#title'], $link['#href'], $link['#localized_options']);
+}

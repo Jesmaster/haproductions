@@ -1,8 +1,17 @@
 (function ($, Drupal) {
 
-  Drupal.behaviors.STARTER = {
+  Drupal.behaviors.haproductions = {
     attach: function(context, settings) {
-      // Get your Yeti started.
+    	$('#site-theme').bind('click',function(e){
+    		e.preventDefault();
+    		$body = $('body');
+    		if($body.hasClass('light')){
+    			$body.removeClass('light').addClass('dark');
+    		}
+    		else{
+    			$body.removeClass('dark').addClass('light');
+    		}
+    	});
     }
   };
 
