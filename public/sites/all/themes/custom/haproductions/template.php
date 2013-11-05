@@ -193,10 +193,16 @@ function haproductions_js_alter(&$js) {
  */
 function haproductions_zurb_foundation_menu_link($variables) {
   $link = $variables['link'];
-  if($link['#href'] == 'videos' && $node = menu_get_object()){
-    if($node->type == 'video'){
+  if($link['#href'] == 'videos'){
+    if($node = menu_get_object()){
+      if($node->type == 'video'){
+        $link['#localized_options']['attributes']['class'][] = 'active';
+      }
+    }
+    else if(arg(0) == 'videos'){
       $link['#localized_options']['attributes']['class'][] = 'active';
     }
   }
+
   return l($link['#title'], $link['#href'], $link['#localized_options']);
 }

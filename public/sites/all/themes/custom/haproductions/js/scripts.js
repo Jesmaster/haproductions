@@ -2,7 +2,7 @@
 
   Drupal.behaviors.haproductions = {
     attach: function(context, settings) {
-    	$('#site-theme').bind('click',function(e){
+    	$('#site-theme',context).bind('click',function(e){
     		e.preventDefault();
     		$body = $('body');
     		if($body.hasClass('light')){
