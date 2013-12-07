@@ -130,12 +130,6 @@
 
       <a id="main-content"></a>
 
-      <?php if ($title && !$is_front): ?>
-        <?php print render($title_prefix); ?>
-        <h1 id="page-title" class="title"><?php print $title; ?></h1>
-        <?php print render($title_suffix); ?>
-      <?php endif; ?>
-
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
         <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
@@ -149,11 +143,21 @@
 
       <div class="row content-row">
       <?php if (empty($page['content_sidebar'])): ?>
-        <div class="content-region small-12 large-12 columns">
+        <div class="content-region small-12 columns">
+          <?php if ($title && !$is_front): ?>
+            <?php print render($title_prefix); ?>
+            <h1 id="page-title" class="title"><?php print $title; ?></h1>
+            <?php print render($title_suffix); ?>
+          <?php endif; ?>
           <?php print render($page['content']); ?>
         </div>
       <?php else: ?>
         <div class="content-region small-12 large-8 columns">
+      <?php if ($title && !$is_front): ?>
+          <?php print render($title_prefix); ?>
+            <h1 id="page-title" class="title"><?php print $title; ?></h1>
+            <?php print render($title_suffix); ?>
+          <?php endif; ?>
           <?php print render($page['content']); ?>
         </div>
         <div class="content-sidebar small-12 large-4 columns">

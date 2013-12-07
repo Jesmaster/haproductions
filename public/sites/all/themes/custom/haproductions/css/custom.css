@@ -7617,10 +7617,10 @@ body.dark .content-sidebar .block-content h4 {
   zoom: 1;
   vertical-align: middle;
 }
-/* line 6, ../scss/theme/_video.scss */
-#video-quicksearch-form #show-all-videos {
+
+/* line 8, ../scss/theme/_video.scss */
+#show-all-videos {
   display: none;
-  margin-left: 30px;
 }
 
 /* line 13, ../scss/theme/_video.scss */

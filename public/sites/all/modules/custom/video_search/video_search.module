@@ -138,7 +138,7 @@ function video_search_quicksearch($keys = NULL){
 
 	$render['results'] = array(
 		'nodes' => $view,
-		'#prefix' => '<div id="video-quicksearch-results">',
+		'#prefix' => '<div id="video-quicksearch-results" class="small-12 columns">',
 		'#suffix' => '</div>',
 	);
 
