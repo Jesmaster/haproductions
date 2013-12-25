@@ -41,6 +41,13 @@
           });
     	}
 
+      $('#search-videos').bind('click',function(e){
+        e.preventDefault();
+        if($('#edit-search').val() != ''){
+          trigger_quicksearch();
+        }
+      });
+
       $('#show-all-videos').bind('click',function(){
         $('.node-video.view-mode-search_result').removeClass('search-result').removeClass('no-result');
         $('#video-quicksearch-results').isotope({
@@ -71,11 +78,17 @@
           $('#node-'+value).removeClass('no-result').addClass('search-result');
         });
 
-        $('#video-quicksearch-results').isotope({
-          filter: '.search-result'
-        });
+        if($('.search-result').length){
+          $('#video-quicksearch-results').isotope({
+            filter: '.search-result'
+          });
 
-        $('#show-all-videos').show();
+          $('#show-all-videos').show();
+        }
+        else{
+          $('#show-all-videos').click();
+        }
+
       }
 
     }

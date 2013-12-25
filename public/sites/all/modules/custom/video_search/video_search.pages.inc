@@ -41,8 +41,8 @@ function video_quicksearch_form($form,&$form_state,$keywords){
 			'callback' => 'video_search_quicksearch_ajax_callback',
 			'wrapper' => 'video-quicksearch-results',
 		),
-		'#attributes' => array('class' => array('postfix')),
-		'#prefix' => '<div class="small-2 columns">',
+		'#attributes' => array('style' => array('display:none')),
+		'#prefix' => '<div class="small-2 columns"><button id="search-videos" class="postfix fi-magnifying-glass">Search</button>',
 		'#suffix' => '</div></div>',
 	);
 

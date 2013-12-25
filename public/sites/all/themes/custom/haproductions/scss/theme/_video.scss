@@ -1,3 +1,6 @@
+$video-iwidth: 256px;
+$video-iheight: 192px;
+
 #video-quicksearch-form{
 	.form-item-search{
 		@include inline-block;
@@ -11,13 +14,13 @@
 
 .node-video{
 	&.view-mode-search_result{
-		width:256px;
-		height:192px;
+		width:$video-iwidth;
+		height:$video-iheight;
 		overflow:hidden;
 		margin-bottom:20px;
 
 		.field-name-field-images{
-			height:192px;
+			height:$video-iheight;
 			overflow:hidden;
 			background-color:#000;
 			display:table-cell;
@@ -31,8 +34,8 @@
 			left:0;
 			z-index:900;
 			@include rgba-background-inline(rgba(0,0,0,0.6));
-			width:256px;
-			height:192px;
+			width:$video-iwidth;
+			height:$video-iheight;
 			cursor:pointer;
 		}
 
@@ -61,7 +64,7 @@
 	  			.node-title{
 	  				background:#000;
 	  				position:absolute;
-	  				width:256px;
+	  				width:$video-iwidth;
 	  				text-align:center;
 	  				bottom:0;
 	  				left:0;

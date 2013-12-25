@@ -46,18 +46,34 @@
 		body.light &{
 			background-color:$color_medium_blue;
 			color:$color_light_blue;
+
+			a{
+				color:$color_light_blue;
+			}
 		}
 		body.dark &{
 			background-color:$color_light_blue;
 			color:$color_dark_blue;
+
+			a{
+				color:$color_dark_blue;
+			}
 		}
 
 		h4{
+			margin-bottom:0.2em;
 			body.light &{
 				color:$color_medium_light_blue;
 			}
 			body.dark &{
 				color:$color_medium_blue;
+			}
+		}
+
+		.field{
+			margin:1em 0;
+			&:first-child{
+				margin-top:0;
 			}
 		}
 	}
