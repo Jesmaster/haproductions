@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "IBM437";
 /* @file
  * This file is a custom file that loads all files. Each non-base layer
  * can be disabled.
@@ -7365,6 +7365,11 @@ a.th {
   padding: 0;
 }
 
+/* line 33, ../scss/base/_drupal.scss */
+.ajax-progress-throbber {
+  display: none;
+}
+
 /* line 8, ../scss/base/_elements.scss */
 body {
   font-family: Lato;
@@ -7384,7 +7389,7 @@ body.dark {
 
 /* line 29, ../scss/base/_elements.scss */
 h1 {
-  font-size: 6em;
+  font-size: 5em;
 }
 
 /* line 34, ../scss/base/_elements.scss */
@@ -7460,40 +7465,82 @@ body.dark .top-bar {
   background-color: #e6ebff;
   border-top: 4px solid #7988b5;
 }
-/* line 19, ../scss/layout/_header.scss */
+@media only screen and (min-width: 768px) {
+  /* line 17, ../scss/layout/_header.scss */
+  .top-bar .title-area {
+    float: left;
+  }
+}
+/* line 21, ../scss/layout/_header.scss */
+.top-bar .title-area li {
+  float: left;
+}
+/* line 25, ../scss/layout/_header.scss */
 .top-bar .title-area .name h1 {
   font-size: 2em;
   line-height: inherit;
+  padding-top: 0.1em;
+}
+/* line 30, ../scss/layout/_header.scss */
+body.light .top-bar .title-area .name h1 a {
+  color: #fff;
+}
+/* line 33, ../scss/layout/_header.scss */
+body.dark .top-bar .title-area .name h1 a {
+  color: #384d8c;
 }
 
-/* line 32, ../scss/layout/_header.scss */
+/* line 42, ../scss/layout/_header.scss */
+#logo-svg {
+  height: 61px;
+  width: 70px;
+}
+/* line 46, ../scss/layout/_header.scss */
+body.light #logo-svg polygon {
+  fill: #fff;
+}
+/* line 49, ../scss/layout/_header.scss */
+body.dark #logo-svg polygon {
+  fill: #384d8c;
+}
+
+/* line 59, ../scss/layout/_header.scss */
+.top-bar-section ul {
+  width: auto !important;
+}
+
+/* line 65, ../scss/layout/_header.scss */
 .top-bar-section .left.main-nav {
   background-color: transparent;
 }
-/* line 34, ../scss/layout/_header.scss */
+/* line 67, ../scss/layout/_header.scss */
+.top-bar-section .left.main-nav a {
+  padding: 0 15px;
+}
+/* line 70, ../scss/layout/_header.scss */
 .top-bar-section .left.main-nav a:not(.button) {
   font-family: 'Yanone Kaffeesatz';
   font-size: 2em;
   line-height: inherit;
   background-color: transparent;
 }
-/* line 40, ../scss/layout/_header.scss */
+/* line 76, ../scss/layout/_header.scss */
 .top-bar-section .left.main-nav a:not(.button):hover {
   background-color: transparent;
 }
-/* line 44, ../scss/layout/_header.scss */
+/* line 80, ../scss/layout/_header.scss */
 body.light .top-bar-section .left.main-nav a:not(.button) {
   color: #c1cae8;
 }
-/* line 48, ../scss/layout/_header.scss */
+/* line 84, ../scss/layout/_header.scss */
 body.light .top-bar-section .left.main-nav a:not(.button).active, body.light .top-bar-section .left.main-nav a:not(.button):hover {
   color: #fff;
 }
-/* line 52, ../scss/layout/_header.scss */
+/* line 88, ../scss/layout/_header.scss */
 body.dark .top-bar-section .left.main-nav a:not(.button) {
   color: #7988b5;
 }
-/* line 56, ../scss/layout/_header.scss */
+/* line 92, ../scss/layout/_header.scss */
 body.dark .top-bar-section .left.main-nav a:not(.button).active, body.dark .top-bar-section .left.main-nav a:not(.button):hover {
   color: #384d8c;
 }
@@ -9437,4 +9484,9 @@ html.touch .node-video.view-mode-search_result .overlay .node-title {
   padding: 5px 0;
   font-size: 1em;
   line-height: 1.2em;
+}
+
+/* line 82, ../scss/theme/_video.scss */
+.field-name-field-video-file a {
+  margin: 0;
 }

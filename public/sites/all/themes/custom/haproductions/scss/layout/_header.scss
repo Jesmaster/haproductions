@@ -15,22 +15,58 @@
 		border-top:4px solid $color_medium_blue;
 	}
 	.title-area {
+		@media #{$small} {
+			float:left; 
+		}
+		li{
+			float:left;
+		}
 		.name{
 			h1{
 				font-size:2em;
 				line-height:inherit;
+				padding-top:0.1em;
+				a{
+					body.light &{
+						color:#fff;
+					}
+					body.dark &{
+						color:$color_dark_blue;
+					}
+				}
 			}
 		}
 	}
 }
 
-.top-bar-section {
+#logo-svg {
+	height:61px;
+	width:70px;
+	polygon{
+		body.light &{
+			fill:#fff;
+		}
+		body.dark &{
+			fill:$color_dark_blue;
+		}
+	}
+	&:hover{
 
+	}
+}
+
+.top-bar-section {
+	ul{
+		width:auto !important;
+	}
 }
 
 .top-bar-section .left {
 	&.main-nav{
 		background-color: transparent;
+		a{
+			padding:0 15px;
+		}
 		a:not(.button){
 			font-family:'Yanone Kaffeesatz';
 			font-size: 2em;

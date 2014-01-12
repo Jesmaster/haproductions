@@ -11,6 +11,7 @@
       <?php endif; ?>
         <nav class="top-bar"<?php print $top_bar_options; ?>>
           <ul class="title-area">
+            <li class="logo"><?php include(drupal_get_path('theme', 'haproductions').'/images/logo.svg');?></li>
             <li class="name hide-for-medium-down"><h1><?php print $linked_site_name; ?></h1></li>
           </ul>
           <section class="top-bar-section">
@@ -21,7 +22,7 @@
               <?php print $top_bar_secondary_menu; ?>
             <?php endif; ?>
           </section>
-          <section class="top-bar-section hide-for-medium-down">
+          <section class="top-bar-section">
             <div class="right">
               <a id="site-theme" class="small round button">Change Theme</a>
             </div>
@@ -227,12 +228,11 @@
   <?php endif; ?>
 
   <!--.l-footer-->
+  <?php if (!empty($page['footer'])): ?>
   <footer class="l-footer panel row" role="contentinfo">
-    <?php if (!empty($page['footer'])): ?>
       <div class="footer large-12 columns">
         <?php print render($page['footer']); ?>
       </div>
-    <?php endif; ?>
 
     <?php if ($site_name) :?>
       <div class="copyright large-12 columns">
@@ -240,6 +240,7 @@
       </div>
     <?php endif; ?>
   </footer>
+  <?php endif; ?>
   <!--/.footer-->
 
   <?php if ($messages && $zurb_foundation_messages_modal): print $messages; endif; ?>

@@ -215,9 +215,6 @@ function haproductions_page_alter(&$page) {
   if(isset($page['content']['system_main']['form']['#form_id']) && $page['content']['system_main']['form']['#form_id'] == 'video_quicksearch_form'){
     $page['content']['system_main']['#prefix'] = '<div class="row">';
     $page['content']['system_main']['#suffix'] = '</div>';
-    $page['content']['system_main']['show_all'] = array(
-      '#markup' => '<div class="small-3 columns"><button class="small" id="show-all-videos">Show All</button></div>',
-    );
   }
 }
 
@@ -227,15 +224,15 @@ function haproductions_page_alter(&$page) {
 function haproductions_form_alter(&$form, &$form_state, $form_id) {
   switch ($form_id) {
     case 'video_quicksearch_form':
-      $form['#prefix'] = '<div class="small-6 columns">';
-      $form['#suffix'] = '</div>';
+      $form['#prefix'] = '<div class="small-8 columns">';
+      $form['#suffix'] = '</div><div class="small-2 columns"><button class="small" id="show-all-videos">Show All</button></div>';
 
-      $form['search']['#prefix'] = '<div class="row collapse"><div class="small-10 columns">';
+      $form['search']['#prefix'] = '<div class="row collapse"><div class="small-11 columns">';
       $form['search']['#suffix'] = '</div>';
       $form['search']['#theme_wrappers'] = array();
 
       $form['submit']['#attributes'] = array('style' => 'display:none');
-      $form['submit']['#prefix'] = '<div class="small-2 columns"><button id="search-videos" class="postfix fi-magnifying-glass">Search</button>';
+      $form['submit']['#prefix'] = '<div class="small-1 columns"><button id="search-videos" class="postfix fi-magnifying-glass">&nbsp;</button>';
       $form['submit']['#suffix'] = '</div></div>'; 
       break;
   }
