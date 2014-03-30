@@ -1,0 +1,62 @@
+@font-face {font-family: 'Norwester';src: url('../fonts/webfonts/norwester.eot');src: url('../fonts/webfonts/norwester.eot?#iefix') format('embedded-opentype'),url('../fonts/webfonts/norwester.woff') format('woff'),url('../fonts/webfonts/norwester.ttf') format('truetype');}
+
+
+@color_dark_brown: #534741;
+@color_medium_brown: #736357;
+@color_light_brown: #998675;
+@color_beige: #F5E8D8;
+@color_light_beige: #F2EDE6;
+@color_gray: #4D4D4D;
+@color_dark_blue: #384D8C;
+@color_medium_blue: #7988B5;
+@color_medium_light_blue: #C1CAE8;
+@color_light_blue: #E6EBFF;
+
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/**** Isotope filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}

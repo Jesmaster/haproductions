@@ -1,0 +1,72 @@
+body{
+	font-family:Lato;
+	cursor:auto;
+
+	&.light{
+		background-color:#fff;
+		color:@color_gray;
+	}
+
+	&.dark{
+		background-color:@color_gray;
+		color:@color_light_beige;
+	}
+}
+
+// Headings
+//------------------------------------------
+// h1, h2, h3,
+// h4, h5, h6 {}
+
+h1,
+h3{
+	font-family:Norwester;
+
+	body.light &{
+		color:@color_dark_brown;
+	}
+	body.dark &{
+		color:@color_beige;
+	}
+}
+
+h2,
+h4{
+	font-family:'Yanone Kaffeesatz';
+
+	body.light &{
+		color:@color_medium_brown;
+	}
+
+	body.dark &{
+		color:@color_light_brown;
+	}
+}
+
+// Anchors
+//-----------------------------------------------------------------------------
+a {
+	body.light &{
+		color:@color_dark_blue;
+	}
+
+	body.dark &{
+		color:@color_medium_light_blue;
+	}	
+}
+
+p,
+label{
+	color:inherit;
+	font-size:inherit;
+}
+
+#block-feature-feature{
+	.field-name-field-images .field-item{
+		margin-bottom:10px;
+	}
+	img{
+		.img-responsive;
+		margin:0 auto;
+	}
+}
