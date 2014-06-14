@@ -5675,7 +5675,9 @@ button.close {
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+#video-quicksearch-results:before,
+#video-quicksearch-results:after {
   content: " ";
   display: table;
 }
@@ -5692,7 +5694,8 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after {
+.modal-footer:after,
+#video-quicksearch-results:after {
   clear: both;
 }
 .center-block {
@@ -6685,62 +6688,70 @@ label {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
   margin: 0 auto;
 }
-.content-sidebar .block-title.panel {
+.region-sidebar-second .block-title.panel {
   margin-bottom: 0;
   padding: 0.5em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
-body.light .content-sidebar .block-title.panel {
+body.light .region-sidebar-second .block-title.panel {
   border-color: #384d8c;
 }
-body.dark .content-sidebar .block-title.panel {
+body.dark .region-sidebar-second .block-title.panel {
   border-color: #7988b5;
 }
-body.light .content-sidebar .block-title {
+body.light .region-sidebar-second .block-title {
   background-color: #384d8c;
   color: #c1cae8;
 }
-body.dark .content-sidebar .block-title {
+body.dark .region-sidebar-second .block-title {
   background-color: #7988b5;
   color: #e6ebff;
 }
-.content-sidebar .block-content {
+.region-sidebar-second .block-content {
   font-size: 1em;
 }
-body.light .content-sidebar .block-content.panel {
+.region-sidebar-second .block-content.panel {
+  padding: 0.5em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+body.light .region-sidebar-second .block-content.panel {
   border-color: #7988b5;
 }
-body.dark .content-sidebar .block-content.panel {
+body.dark .region-sidebar-second .block-content.panel {
   border-color: #e6ebff;
 }
-body.light .content-sidebar .block-content {
+body.light .region-sidebar-second .block-content {
   background-color: #7988b5;
   color: #e6ebff;
 }
-body.light .content-sidebar .block-content a {
+body.light .region-sidebar-second .block-content a {
   color: #e6ebff;
 }
-body.dark .content-sidebar .block-content {
+body.dark .region-sidebar-second .block-content {
   background-color: #e6ebff;
   color: #384d8c;
 }
-body.dark .content-sidebar .block-content a {
+body.dark .region-sidebar-second .block-content a {
   color: #384d8c;
 }
-.content-sidebar .block-content h4 {
+.region-sidebar-second .block-content h4 {
   margin-bottom: 0.2em;
 }
-body.light .content-sidebar .block-content h4 {
+body.light .region-sidebar-second .block-content h4 {
   color: #c1cae8;
 }
-body.dark .content-sidebar .block-content h4 {
+body.dark .region-sidebar-second .block-content h4 {
   color: #7988b5;
 }
-.content-sidebar .block-content .field {
+.region-sidebar-second .block-content .field {
   margin: 1em 0;
 }
-.content-sidebar .block-content .field:first-child {
+.region-sidebar-second .block-content .field:first-child {
   margin-top: 0;
 }
 #video-quicksearch-form .form-item-search {
@@ -6749,29 +6760,60 @@ body.dark .content-sidebar .block-content h4 {
 #show-all-videos {
   display: none;
 }
+#video-quicksearch-results {
+  margin-left: -15px;
+  margin-right: -15px;
+}
 .node-video.view-mode-search_result {
-  width: 256px;
-  height: 192px;
   overflow: hidden;
   margin-bottom: 20px;
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .node-video.view-mode-search_result {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .node-video.view-mode-search_result {
+    float: left;
+    width: 33.33333333333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .node-video.view-mode-search_result {
+    float: left;
+    width: 25%;
+  }
 }
 .node-video.view-mode-search_result .field-name-field-images {
-  height: 192px;
   overflow: hidden;
   background-color: #000;
-  display: table-cell;
-  vertical-align: middle;
+}
+.node-video.view-mode-search_result .field-name-field-images > .field-items > .field-item {
+  width: 100%;
+}
+.node-video.view-mode-search_result .field-name-field-images img {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .node-video.view-mode-search_result .overlay {
   display: none;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 15px;
   z-index: 900;
   background-color: rgba(0, 0, 0, 0.6);
-  width: 256px;
-  height: 192px;
   cursor: pointer;
+  height: 100%;
 }
 .node-video.view-mode-search_result .node-title {
   width: 200px;
@@ -6793,7 +6835,7 @@ html.touch .node-video.view-mode-search_result .overlay {
 html.touch .node-video.view-mode-search_result .overlay .node-title {
   background: #000;
   position: absolute;
-  width: 256px;
+  width: 100%;
   text-align: center;
   bottom: 0;
   left: 0;

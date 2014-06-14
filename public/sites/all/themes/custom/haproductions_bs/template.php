@@ -43,3 +43,35 @@ function haproductions_bs_preprocess_node(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_block()
+ */
+function haproductions_bs_preprocess_block(&$variables) {
+  $variables['content_attributes_array']['class'][] = 'block-content';
+
+  if($variables['block']->region == 'sidebar_second'){
+    $variables['title_attributes_array']['class'][] = 'panel';
+    $variables['content_attributes_array']['class'][] = 'panel';
+  }
+}
+
+/**
+ * Implements template_preprocess_field()
+ */
+function haproductions_bs_preprocess_field(&$variables) {
+  switch ($variables['element']['#field_name']) {
+    case 'field_images':
+      $variables['item_count'] = count($variables['items']);
+      if($variables['item_count'] == 3){
+        $variables['bs_columns'] = 4;
+      }
+      else if($variables['item_count'] == 2){
+        $variables['bs_columns'] = 6;
+      }
+      else{
+        $variables['bs_columns'] = 12;
+      }
+      break;
+  }
+}

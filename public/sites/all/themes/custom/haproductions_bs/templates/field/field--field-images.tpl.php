@@ -50,7 +50,7 @@
   <?php endif; ?>
   <div class="field-items<?= $element['#view_mode'] == 'feature' ? ' row' : ''?>"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?><?= $element['#view_mode'] == 'feature' ? ' col-xs-12 col-sm-4' : ''?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
+      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?><?= $element['#view_mode'] == 'feature' ? ' col-xs-12 col-sm-'.$bs_columns : ''?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
     <?php endforeach; ?>
   </div>
 </div>

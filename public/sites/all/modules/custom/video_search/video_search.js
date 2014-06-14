@@ -20,12 +20,14 @@
 
   		if($videos.length > 0){
           if($('#video-quicksearch-results',context).length > 0){
+            /*
             $('#video-quicksearch-results',context).isotope({
               masonry: { 
                   columnWidth: 256,
                   gutterWidth: 20
               }
             });
+            */
           }
           
           $videos.each(function(){
@@ -35,8 +37,16 @@
                 slides: '.field-item',
               });
 
+            $('.overlay',this).width($(this).width());
+
             $('.overlay',this).bind('click',function(){
               $('a',this)[0].click();
+            });
+          });
+
+          $(window).resize(function(){
+            $videos.each(function(){
+              $('.overlay',this).width($(this).width());
             });
           });
     	}
