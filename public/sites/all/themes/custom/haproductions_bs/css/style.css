@@ -6825,6 +6825,9 @@ body.dark .region-sidebar-second .block-content h4 {
   color: #fff;
   text-decoration: none;
 }
+.node-video.view-mode-search_result.no-result {
+  display: none;
+}
 html.no-touch .node-video.view-mode-search_result:hover .overlay {
   display: block;
 }
