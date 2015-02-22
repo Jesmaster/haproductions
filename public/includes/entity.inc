@@ -14,14 +14,6 @@
 interface DrupalEntityControllerInterface {
 
   /**
-   * Constructor.
-   *
-   * @param $entityType
-   *   The entity type for which the instance is created.
-   */
-  public function __construct($entityType);
-
-  /**
    * Resets the internal, static entity cache.
    *
    * @param $ids
@@ -54,7 +46,7 @@ interface DrupalEntityControllerInterface {
 class DrupalDefaultEntityController implements DrupalEntityControllerInterface {
 
   /**
-   * Static cache of entities.
+   * Static cache of entities, keyed by entity ID.
    *
    * @var array
    */
@@ -119,6 +111,9 @@ class DrupalDefaultEntityController implements DrupalEntityControllerInterface {
 
   /**
    * Constructor: sets basic variables.
+   *
+   * @param $entityType
+   *   The entity type for which the instance is created.
    */
   public function __construct($entityType) {
     $this->entityType = $entityType;
@@ -364,19 +359,23 @@ class DrupalDefaultEntityController implements DrupalEntityControllerInterface {
     // Exclude any entities loaded from cache if they don't match $conditions.
     // This ensures the same behavior whether loading from memory or database.
     if ($conditions) {
-      foreach ($entities as $key => $entity) {
-        $entity_values = (array) $entity;
-        foreach ($conditions as $condition_key => $condition_value) {
-          if (is_array($condition_value)) {
-            if (!isset($entity_values[$condition_key])) {
-              unset($entities[$key]);
-            }
-            elseif (!in_array($entity_values[$condition_key], $condition_value)) {
-              unset($entities[$key]);
+      foreach ($entities as $entity) {
+        // Iterate over all conditions and compare them to the entity
+        // properties. We cannot use array_diff_assoc() here since the
+        // conditions can be nested arrays, too.
+        foreach ($conditions as $property_name => $condition) {
+          if (is_array($condition)) {
+            // Multiple condition values for one property are treated as OR
+            // operation: only if the value is not at all in the condition array
+            // we remove the entity.
+            if (!in_array($entity->{$property_name}, $condition)) {
+              unset($entities[$entity->{$this->idKey}]);
+              continue 2;
             }
           }
-          elseif (!isset($entity_values[$condition_key]) || $entity_values[$condition_key] != $condition_value) {
-            unset($entities[$key]);
+          elseif ($condition != $entity->{$property_name}) {
+            unset($entities[$entity->{$this->idKey}]);
+            continue 2;
           }
         }
       }
@@ -644,7 +643,7 @@ class EntityFieldQuery {
 
   /**
    * Adds a condition on field values.
-   * 
+   *
    * Note that entities with empty field values will be excluded from the
    * EntityFieldQuery results when using this method.
    *
